@@ -52,7 +52,7 @@ class ControladorUsuarioTest {
         crear(dto);
 
         // act - assert
-        mocMvc.perform(MockMvcRequestBuilders.post("/api/personas")
+        mocMvc.perform(MockMvcRequestBuilders.post("/api/usuarios")
                         .contentType(MediaType.APPLICATION_JSON)
                         .content(objectMapper.writeValueAsString(dto))
                 )
@@ -73,7 +73,7 @@ class ControladorUsuarioTest {
         // arrange
 
         // act
-        var result = mocMvc.perform(MockMvcRequestBuilders.post("/api/personas")
+        var result = mocMvc.perform(MockMvcRequestBuilders.post("/api/usuarios")
                         .contentType(MediaType.APPLICATION_JSON)
                         .content(objectMapper.writeValueAsString(dto))
                 )
@@ -87,10 +87,12 @@ class ControladorUsuarioTest {
         Long id = respuesta.getValor().longValue();
         Assertions.assertNotNull(id);
 
-        var persona = repositorioUsuario.consultarPorId(id);
+        var usuario = repositorioUsuario.consultarPorId(id);
 
-        Assertions.assertEquals(dto.getNombre(), persona.getNombre());
-        Assertions.assertEquals(dto.getApellido(), persona.getApellido());
+        Assertions.assertEquals(dto.getNombre(), usuario.getNombre());
+        Assertions.assertEquals(dto.getApellido(), usuario.getApellido());
+        Assertions.assertEquals(dto.getCorreo(), usuario.getCorreo());
+        Assertions.assertEquals(dto.getPassword(), usuario.getPassword());
     }
 
     @Test
@@ -101,10 +103,12 @@ class ControladorUsuarioTest {
 
         crear(dto);
 
-        mocMvc.perform(get("/api/personas")
+        mocMvc.perform(get("/api/usuarios")
                         .contentType(MediaType.APPLICATION_JSON))
                 .andExpect(status().isOk())
                 .andExpect(jsonPath("$[0].nombre", is(dto.getNombre())))
-                .andExpect(jsonPath("$[0].apellido", is(dto.getApellido())));
+                .andExpect(jsonPath("$[0].apellido", is(dto.getApellido())))
+                .andExpect(jsonPath("$[0].correo", is(dto.getCorreo())))
+                .andExpect(jsonPath("$[0].password", is(dto.getPassword())));
     }
 }
