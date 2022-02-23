@@ -1,7 +1,6 @@
 package com.uco.myproject.aplicacion.dto;
 
 public class DtoUsuario {
-
     private String nombre;
     private String apellido;
     private String correo;
