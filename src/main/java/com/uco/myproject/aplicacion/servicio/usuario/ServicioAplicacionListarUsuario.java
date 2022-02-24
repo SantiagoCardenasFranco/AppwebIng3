@@ -1,4 +1,4 @@
-package com.uco.myproject.aplicacion.servicio;
+package com.uco.myproject.aplicacion.servicio.usuario;
 
 import com.uco.myproject.dominio.modelo.Usuario;
 import com.uco.myproject.dominio.puerto.RepositorioUsuario;
