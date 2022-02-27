@@ -41,12 +41,12 @@ class TamanoTest {
         //patron 3a
 
         //arrange (prepara todos los datos para la prueba)
-        String nombre = "Grande";
-        String especificacion = "";
+        String nombre = "";
+        String especificacion = "Va desde 30 a 50 cm";
 
         //act - assert (ejecuta el metodo a probar)
 
-        Assertions.assertEquals("La especificación no puede ser vacio",Assertions.assertThrows(IllegalArgumentException.class, () ->
+        Assertions.assertEquals("El nombre no puede ser vacio",Assertions.assertThrows(IllegalArgumentException.class, () ->
                 Tamano.of(nombre, especificacion)
         ).getMessage());
     }
