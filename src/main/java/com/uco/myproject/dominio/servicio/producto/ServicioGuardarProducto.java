@@ -1,4 +1,4 @@
-package com.uco.myproject.dominio.servicio;
+package com.uco.myproject.dominio.servicio.producto;
 
 import com.uco.myproject.dominio.modelo.Producto;
 import com.uco.myproject.dominio.modelo.Usuario;

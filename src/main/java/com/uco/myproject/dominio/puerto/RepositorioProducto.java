@@ -6,8 +6,9 @@ import java.util.List;
 
 public interface RepositorioProducto {
 
-/*    List<Producto> listar();
+    List<Producto> listar();
     Producto consultarPorId(Long id);
     Long guardar(Producto producto);
-    boolean existe(Producto producto);*/
+    Boolean eliminar(Long id);
+    Boolean actualizar(Long id, Producto producto);
 }

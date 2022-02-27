@@ -36,4 +36,16 @@ public class EntidadProducto {
     public EntidadUsuario getEntidadUsuario() {
         return entidadUsuario;
     }
+
+    public void setIdProducto(Long idProducto) {
+        this.idProducto = idProducto;
+    }
+
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
+
+    public void setEntidadUsuario(EntidadUsuario entidadUsuario) {
+        this.entidadUsuario = entidadUsuario;
+    }
 }

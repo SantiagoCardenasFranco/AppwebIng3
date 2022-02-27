@@ -8,11 +8,11 @@ import org.springframework.stereotype.Repository;
 import java.util.List;
 
 @Repository
-public class RepositorioUsuarioMysql implements RepositorioUsuario {
+public class RepositorioUsuarioPostgresql implements RepositorioUsuario {
 
     private final RepositorioUsuarioJpa repositorioUsuarioJpa;
 
-    public RepositorioUsuarioMysql(RepositorioUsuarioJpa repositorioUsuarioJpa) {
+    public RepositorioUsuarioPostgresql(RepositorioUsuarioJpa repositorioUsuarioJpa) {
         this.repositorioUsuarioJpa = repositorioUsuarioJpa;
     }
 
@@ -45,5 +45,23 @@ public class RepositorioUsuarioMysql implements RepositorioUsuario {
     @Override
     public boolean existe(Usuario usuario) {
         return this.repositorioUsuarioJpa.findByNombreAndApellido(usuario.getNombre(), usuario.getApellido()) != null;
+    }
+
+    @Override
+    public Boolean eliminar(Long id) {
+        this.repositorioUsuarioJpa.deleteById(id);
+        return true;
+    }
+
+    @Override
+    public Boolean actualizar(Long id, Usuario usuario) {
+        repositorioUsuarioJpa.findById(id);
+        EntidadUsuario entidadUsuario = new EntidadUsuario();
+        entidadUsuario.setNombre(usuario.getNombre());
+        entidadUsuario.setApellido(usuario.getApellido());
+        entidadUsuario.setCorreo(usuario.getCorreo());
+        entidadUsuario.setPassword(usuario.getPassword());
+        repositorioUsuarioJpa.save(entidadUsuario);
+        return true;
     }
 }
