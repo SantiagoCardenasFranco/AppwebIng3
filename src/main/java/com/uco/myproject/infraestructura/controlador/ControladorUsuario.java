@@ -5,7 +5,7 @@ import com.uco.myproject.aplicacion.servicio.usuario.ServicioAplicacionEliminarU
 import com.uco.myproject.aplicacion.servicio.usuario.ServicioAplicacionGuardarUsuario;
 import com.uco.myproject.aplicacion.servicio.usuario.ServicioAplicacionListarUsuario;
 import com.uco.myproject.aplicacion.dto.DtoUsuario;
-import com.uco.myproject.aplicacion.dto.DtoRespuesta;
+import com.uco.myproject.aplicacion.dto.respuesta.DtoRespuesta;
 import com.uco.myproject.dominio.modelo.Usuario;
 import org.springframework.web.bind.annotation.*;
 

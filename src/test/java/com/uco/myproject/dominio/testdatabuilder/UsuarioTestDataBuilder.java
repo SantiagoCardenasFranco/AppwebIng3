@@ -2,36 +2,36 @@ package com.uco.myproject.dominio.testdatabuilder;
 
 import com.uco.myproject.dominio.modelo.Usuario;
 
-public class PersonaTestDataBuilder {
+public class UsuarioTestDataBuilder {
 
     private String nombre;
     private String apellido;
     private String correo;
     private String password;
 
-    public PersonaTestDataBuilder() {
+    public UsuarioTestDataBuilder() {
         this.nombre = "juan";
         this.apellido = "castano";
         this.correo = "sjdgfbusjdh";
         this.password = "ksdnjdsk5";
     }
 
-    public PersonaTestDataBuilder conNombre(String nombre) {
+    public UsuarioTestDataBuilder conNombre(String nombre) {
         this.nombre = nombre;
         return this;
     }
 
-    public PersonaTestDataBuilder conApellido(String apellido) {
+    public UsuarioTestDataBuilder conApellido(String apellido) {
         this.apellido = apellido;
         return this;
     }
 
-    public PersonaTestDataBuilder conCorreo(String correo){
+    public UsuarioTestDataBuilder conCorreo(String correo){
         this.correo = correo;
         return this;
     }
 
-    public PersonaTestDataBuilder conPassword(String password){
+    public UsuarioTestDataBuilder conPassword(String password){
         this.password = password;
         return this;
     }

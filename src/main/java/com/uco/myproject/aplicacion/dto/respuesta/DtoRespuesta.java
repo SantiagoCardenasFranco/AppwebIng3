@@ -1,4 +1,4 @@
-package com.uco.myproject.aplicacion.dto;
+package com.uco.myproject.aplicacion.dto.respuesta;
 
 public class DtoRespuesta<T> {
 

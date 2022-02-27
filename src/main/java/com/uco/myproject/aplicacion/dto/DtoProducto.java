@@ -1,26 +1,30 @@
 package com.uco.myproject.aplicacion.dto;
 
-import com.uco.myproject.dominio.modelo.Usuario;
-
 public class DtoProducto {
 
     private String nombre;
-    private Usuario usuario;
+    private DtoUsuario dtoUsuario;
+    private DtoCaracteristica dtoCaracteristica;
 
     public DtoProducto() {
     }
 
-    private DtoProducto(String nombre, Usuario usuario) {
+    private DtoProducto(String nombre, DtoUsuario dtoUsuario, DtoCaracteristica dtoCaracteristica) {
         //this.idProducto = idProducto;
         this.nombre = nombre;
-        this.usuario = usuario;
+        this.dtoUsuario = dtoUsuario;
+        this.dtoCaracteristica = dtoCaracteristica;
     }
 
     public String getNombre() {
         return nombre;
     }
 
-    public Usuario getUsuario() {
-        return usuario;
+    public DtoUsuario getDtoUsuario() {
+        return dtoUsuario;
+    }
+
+    public DtoCaracteristica getDtoCaracteristica() {
+        return dtoCaracteristica;
     }
 }

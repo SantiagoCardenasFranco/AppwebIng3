@@ -3,7 +3,7 @@ package com.uco.myproject.dominio.servicio;
 import com.uco.myproject.dominio.modelo.Usuario;
 import com.uco.myproject.dominio.puerto.RepositorioUsuario;
 import com.uco.myproject.dominio.servicio.usuario.ServicioGuardarUsuario;
-import com.uco.myproject.dominio.testdatabuilder.PersonaTestDataBuilder;
+import com.uco.myproject.dominio.testdatabuilder.UsuarioTestDataBuilder;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.mockito.Mockito;
@@ -14,7 +14,7 @@ class ServicioGuardarUsuarioTest {
     void siNombreYaExisteDeberiaRetornarError() {
 
         //arrange
-        var persona = new PersonaTestDataBuilder().build();
+        var persona = new UsuarioTestDataBuilder().build();
 
         var repositorio = Mockito.mock(RepositorioUsuario.class);
         var servicio = new ServicioGuardarUsuario(repositorio);
@@ -33,7 +33,7 @@ class ServicioGuardarUsuarioTest {
     void guardarExitoso() {
 
         // arrange
-        var persona = new PersonaTestDataBuilder().build();
+        var persona = new UsuarioTestDataBuilder().build();
 
         var repositorio = Mockito.mock(RepositorioUsuario.class);
         var servicio = new ServicioGuardarUsuario(repositorio);

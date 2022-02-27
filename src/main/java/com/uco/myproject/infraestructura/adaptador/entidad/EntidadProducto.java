@@ -17,12 +17,18 @@ public class EntidadProducto {
     @JoinColumn(name = "usuario_id")
     private EntidadUsuario entidadUsuario;
 
+    @ManyToOne
+    @JoinColumn(name = "caracteritica_id")
+    private EntidadCaracteristica entidadCaracteristica;
+
     public EntidadProducto() {
     }
 
-    public EntidadProducto(String nombre, EntidadUsuario entidadUsuario) {
+    public EntidadProducto(String nombre, EntidadUsuario entidadUsuario,
+                           EntidadCaracteristica entidadCaracteristica) {
         this.nombre = nombre;
         this.entidadUsuario = entidadUsuario;
+        this.entidadCaracteristica = entidadCaracteristica;
     }
 
     public Long getIdProducto() {
@@ -47,5 +53,13 @@ public class EntidadProducto {
 
     public void setEntidadUsuario(EntidadUsuario entidadUsuario) {
         this.entidadUsuario = entidadUsuario;
+    }
+
+    public EntidadCaracteristica getEntidadCaracteristica() {
+        return entidadCaracteristica;
+    }
+
+    public void setEntidadCaracteristica(EntidadCaracteristica entidadCaracteristica) {
+        this.entidadCaracteristica = entidadCaracteristica;
     }
 }

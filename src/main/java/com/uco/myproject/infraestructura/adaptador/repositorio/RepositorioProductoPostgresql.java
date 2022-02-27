@@ -27,7 +27,7 @@ public class RepositorioProductoPostgresql implements RepositorioProducto {
 
     @Override
     public Producto consultarPorId(Long id) {
-        return null;
+        return  null;
     }
 
     @Override

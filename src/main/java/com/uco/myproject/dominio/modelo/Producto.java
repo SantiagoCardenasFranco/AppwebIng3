@@ -4,24 +4,27 @@ public class Producto {
 
     private final String nombre;
     private final Usuario usuario;
+    private final Caracteristica caracteristica;
 
-    public static Producto of(String nombre, Usuario usuario) {
+    public static Producto of(String nombre, Usuario usuario, Caracteristica caracteristica) {
 
         //validarNumero(idProducto, "La identificación del producto no puede estar vacia");
         validarObligatorio(nombre, "El nombre no puede ser vacio");
         validarObjeto(usuario, "Un producto debe ser registrado por un usuario");
+        validarObjeto(caracteristica, "La caracteristca de un producto no debe estar vacio");
 
-        return new Producto(nombre, usuario);
+        return new Producto(nombre, usuario, caracteristica);
     }
 
-    private Producto(String nombre, Usuario usuario) {
+    private Producto(String nombre, Usuario usuario, Caracteristica caracteristica) {
         //this.idProducto = idProducto;
         this.nombre = nombre;
         this.usuario = usuario;
+        this.caracteristica = caracteristica;
     }
 
     private static void validarObjeto(Object objeto, String mensaje){
-        if(objeto.getClass() == null){
+        if(objeto == null){
             throw new IllegalArgumentException(mensaje);
         }
     }
@@ -39,5 +42,9 @@ public class Producto {
 
     public Usuario getUsuario() {
         return usuario;
+    }
+
+    public Caracteristica getCaracteristica() {
+        return caracteristica;
     }
 }

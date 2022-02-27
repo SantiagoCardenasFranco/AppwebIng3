@@ -2,10 +2,10 @@ package com.uco.myproject.infraestructura.controlador;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.uco.myproject.aplicacion.dto.DtoUsuario;
-import com.uco.myproject.aplicacion.dto.DtoRespuesta;
+import com.uco.myproject.aplicacion.dto.respuesta.DtoRespuesta;
 import com.uco.myproject.dominio.puerto.RepositorioUsuario;
 import com.uco.myproject.infraestructura.ApplicationMock;
-import com.uco.myproject.infraestructura.testdatabuilder.DtoPersonaTestDataBuilder;
+import com.uco.myproject.infraestructura.testdatabuilder.DtoUsuarioTestDataBuilder;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
@@ -47,7 +47,7 @@ class ControladorUsuarioTest {
     void crearDuplicadaTest() throws Exception {
 
         // arrange
-        var dto = new DtoPersonaTestDataBuilder().build();
+        var dto = new DtoUsuarioTestDataBuilder().build();
 
         crear(dto);
 
@@ -64,7 +64,7 @@ class ControladorUsuarioTest {
     @DisplayName("Debe crear una persona de forma exitosa y validar que si quedó guardada")
     void crearTest() throws Exception {
 
-        var dto = new DtoPersonaTestDataBuilder().build();
+        var dto = new DtoUsuarioTestDataBuilder().build();
 
         crear(dto);
     }
@@ -99,7 +99,7 @@ class ControladorUsuarioTest {
     @DisplayName("Debe listar las personas luego de crearlas")
     void listarTest() throws Exception {
 
-        var dto = new DtoPersonaTestDataBuilder().build();
+        var dto = new DtoUsuarioTestDataBuilder().build();
 
         crear(dto);
 
