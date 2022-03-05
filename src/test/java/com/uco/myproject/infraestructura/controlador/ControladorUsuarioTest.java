@@ -32,7 +32,7 @@ import static org.hamcrest.core.Is.is;
 @DirtiesContext(classMode = DirtiesContext.ClassMode.AFTER_EACH_TEST_METHOD)
 class ControladorUsuarioTest {
 
-/*    @Autowired
+    @Autowired
     private ObjectMapper objectMapper;
 
     @Autowired
@@ -109,5 +109,5 @@ class ControladorUsuarioTest {
                 .andExpect(jsonPath("$[0].apellido", is(dto.getApellido())))
                 .andExpect(jsonPath("$[0].correo", is(dto.getCorreo())))
                 .andExpect(jsonPath("$[0].password", is(dto.getPassword())));
-    }*/
+    }
 }
