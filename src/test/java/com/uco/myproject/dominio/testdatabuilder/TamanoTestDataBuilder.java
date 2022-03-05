@@ -1,11 +1,10 @@
 package com.uco.myproject.dominio.testdatabuilder;
 
 import com.uco.myproject.dominio.modelo.Tamano;
-import com.uco.myproject.dominio.modelo.Usuario;
 
 public class TamanoTestDataBuilder {
 
-    private String nombre;
+/*    private String nombre;
     private String especificacion;
 
     public TamanoTestDataBuilder() {
@@ -25,5 +24,5 @@ public class TamanoTestDataBuilder {
 
     public Tamano build() {
         return Tamano.of(nombre, especificacion);
-    }
+    }*/
 }
