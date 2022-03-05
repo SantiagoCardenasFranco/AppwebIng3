@@ -11,9 +11,9 @@ import org.springframework.stereotype.Repository;
 import java.util.List;
 
 @Repository
-public class RepositorioTamanoPostgresql implements RepositorioTamano {
+public class RepositorioTamanoPostgresql {
 
-    private final RepositorioTamanoJpa repositorioTamanoJpa;
+/*    private final RepositorioTamanoJpa repositorioTamanoJpa;
 
     public RepositorioTamanoPostgresql(RepositorioTamanoJpa repositorioTamanoJpa) {
         this.repositorioTamanoJpa = repositorioTamanoJpa;
@@ -58,5 +58,5 @@ public class RepositorioTamanoPostgresql implements RepositorioTamano {
         entidadTamano.setEspecificacion(tamano.getEspecificacion());
         repositorioTamanoJpa.save(entidadTamano);
         return true;
-    }
+    }*/
 }

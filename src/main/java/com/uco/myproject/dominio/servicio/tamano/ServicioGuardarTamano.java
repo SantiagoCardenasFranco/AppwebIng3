@@ -7,7 +7,7 @@ import org.springframework.stereotype.Service;
 @Service
 public class ServicioGuardarTamano {
 
-    private static final String MENSAJE_YA_EXISTE = "Ya existe el tamaño con los mismos datos";
+ /*   private static final String MENSAJE_YA_EXISTE = "Ya existe el tamaño con los mismos datos";
 
     private final RepositorioTamano repositorioTamano;
 
@@ -21,5 +21,5 @@ public class ServicioGuardarTamano {
             throw new IllegalStateException(MENSAJE_YA_EXISTE);
         }
         return this.repositorioTamano.guardar(tamano);
-    }
+    }*/
 }

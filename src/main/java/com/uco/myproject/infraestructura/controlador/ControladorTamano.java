@@ -13,7 +13,7 @@ import java.util.List;
 @RequestMapping("/api/especificacion/tamanos")
 public class ControladorTamano {
 
-    private final ServicioAplicacionGuardarTamano servicioAplicacionGuardarTamano;
+/*    private final ServicioAplicacionGuardarTamano servicioAplicacionGuardarTamano;
 
     public ControladorTamano(ServicioAplicacionGuardarTamano servicioAplicacionGuardarTamano) {
         this.servicioAplicacionGuardarTamano = servicioAplicacionGuardarTamano;
@@ -22,10 +22,10 @@ public class ControladorTamano {
     /*@GetMapping
     public List<Tamano> listar() {
         return servicioAplicacionGuardarTamano.ejecutar();
-    }*/
+    }
 
     @PostMapping
     public DtoRespuesta<Long> crear(@RequestBody DtoTamano dto) {
         return this.servicioAplicacionGuardarTamano.ejecutar(dto);
-    }
+    }*/
 }

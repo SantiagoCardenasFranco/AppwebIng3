@@ -9,7 +9,7 @@ import org.springframework.stereotype.Component;
 @Component
 public class ServicioAplicacionGuardarTamano {
 
-    private final ServicioGuardarTamano servicioGuardarTamano;
+ /*   private final ServicioGuardarTamano servicioGuardarTamano;
 
     public ServicioAplicacionGuardarTamano(ServicioGuardarTamano servicioGuardarTamano) {
         this.servicioGuardarTamano = servicioGuardarTamano;
@@ -20,5 +20,5 @@ public class ServicioAplicacionGuardarTamano {
         Tamano tamano = Tamano.of(dto.getNombre(), dto.getEspecificacion());
 
         return new DtoRespuesta<>(this.servicioGuardarTamano.ejecutar(tamano));
-    }
+    }*/
 }
