@@ -62,7 +62,7 @@ class ControladorTamanoTest {
 
 
     @Test
-    @DisplayName("Debe crear un tamaño de forma exitosa y validar que si quedó guardada")
+    @DisplayName("Debe crear un tamaño de forma exitosa y validar que si quedó guardado")
     void crearTest() throws Exception {
 
         var dto = new DtoTamanoTestDataBuilder().build();
@@ -94,8 +94,8 @@ class ControladorTamanoTest {
         Assertions.assertEquals(dto.getEspecificacion(), tamano.getEspecificacion());
     }
 
-    @Test
-    @DisplayName("Debe listar las personas luego de crearlas")
+/*    @Test
+    @DisplayName("Debe listar los tamaos luego de crearlos")
     void listarTest() throws Exception {
 
         var dto = new DtoTamanoTestDataBuilder().build();
@@ -107,5 +107,5 @@ class ControladorTamanoTest {
                 .andExpect(status().isOk())
                 .andExpect(jsonPath("$[0].nombre", is(dto.getNombre())))
                 .andExpect(jsonPath("$[0].especificacion", is(dto.getEspecificacion())));
-    }
+    }*/
 }
