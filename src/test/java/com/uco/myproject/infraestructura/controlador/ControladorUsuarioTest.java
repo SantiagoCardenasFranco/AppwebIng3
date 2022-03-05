@@ -26,7 +26,6 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 import static org.hamcrest.core.Is.is;
 
 @ExtendWith(SpringExtension.class)
-@SpringBootTest
 @AutoConfigureMockMvc
 @ContextConfiguration(classes = ApplicationMock.class)
 @ActiveProfiles("test")
