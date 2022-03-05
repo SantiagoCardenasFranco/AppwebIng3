@@ -31,4 +31,20 @@ public class DtoUsuario {
     public String getPassword() {
         return password;
     }
+
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
+
+    public void setApellido(String apellido) {
+        this.apellido = apellido;
+    }
+
+    public void setCorreo(String correo) {
+        this.correo = correo;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
+    }
 }
