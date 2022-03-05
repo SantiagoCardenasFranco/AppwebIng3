@@ -1,7 +1,6 @@
 package com.uco.myproject.infraestructura.testdatabuilder;
 
 import com.uco.myproject.aplicacion.dto.DtoTamano;
-import com.uco.myproject.aplicacion.dto.DtoUsuario;
 
 public class DtoTamanoTestDataBuilder {
 

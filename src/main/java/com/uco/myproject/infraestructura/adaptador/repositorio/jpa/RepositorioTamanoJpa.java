@@ -7,4 +7,5 @@ import org.springframework.stereotype.Repository;
 @Repository
 public interface RepositorioTamanoJpa extends JpaRepository<EntidadTamano, Long> {
 
+    EntidadTamano buscarPorNombre(String nombre);
 }

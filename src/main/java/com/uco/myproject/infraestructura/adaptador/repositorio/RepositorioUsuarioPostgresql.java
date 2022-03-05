@@ -57,6 +57,7 @@ public class RepositorioUsuarioPostgresql implements RepositorioUsuario {
     public Boolean actualizar(Long id, Usuario usuario) {
         repositorioUsuarioJpa.findById(id);
         EntidadUsuario entidadUsuario = new EntidadUsuario();
+        entidadUsuario.setId(id);
         entidadUsuario.setNombre(usuario.getNombre());
         entidadUsuario.setApellido(usuario.getApellido());
         entidadUsuario.setCorreo(usuario.getCorreo());

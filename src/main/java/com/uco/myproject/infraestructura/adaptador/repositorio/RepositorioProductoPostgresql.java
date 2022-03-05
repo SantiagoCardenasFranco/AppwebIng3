@@ -48,6 +48,7 @@ public class RepositorioProductoPostgresql implements RepositorioProducto {
     public Boolean actualizar(Long id, Producto producto) {
         repositorioProductoJpa.findById(id);
         EntidadProducto entidadProducto = new EntidadProducto();
+        entidadProducto.setIdProducto(id);
         entidadProducto.setNombre(producto.getNombre());
         repositorioProductoJpa.save(entidadProducto);
         return true;
