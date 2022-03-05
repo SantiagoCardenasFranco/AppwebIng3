@@ -1,14 +1,13 @@
 package com.uco.myproject.infraestructura.adaptador.repositorio;
 
 import com.uco.myproject.dominio.modelo.Tamano;
-import com.uco.myproject.dominio.modelo.Usuario;
 import com.uco.myproject.dominio.puerto.RepositorioTamano;
 import com.uco.myproject.infraestructura.adaptador.entidad.EntidadTamano;
-import com.uco.myproject.infraestructura.adaptador.entidad.EntidadUsuario;
 import com.uco.myproject.infraestructura.adaptador.repositorio.jpa.RepositorioTamanoJpa;
-
+import org.springframework.stereotype.Repository;
 import java.util.List;
 
+@Repository
 public class RepositorioTamanoPostgresql implements RepositorioTamano {
 
     private final RepositorioTamanoJpa repositorioTamanoJpa;
