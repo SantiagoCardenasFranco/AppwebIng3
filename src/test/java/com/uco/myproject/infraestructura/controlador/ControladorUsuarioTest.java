@@ -37,7 +37,7 @@ class ControladorUsuarioTest {
     @Autowired
     private MockMvc mocMvc;
 
-    //@Autowired
+    @Autowired
     RepositorioUsuario repositorioUsuario;
 
     @Test
