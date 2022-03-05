@@ -43,14 +43,14 @@ class ServicioGuardarTamanoTest {
         var servicio = new ServicioGuardarTamano(repositorio);
 
 
-        Mockito.when(repositorio.guardar(Mockito.any(Tamano.class))).thenReturn(1L);
+        Mockito.when(repositorio.guardar(Mockito.any(Tamano.class))).thenReturn(1l);
 
         // act
         var id = servicio.ejecutar(tamano);
 
         // assert
         Mockito.verify(repositorio, Mockito.times(1)).guardar(tamano);
-        Assertions.assertEquals(1L, id);
+        Assertions.assertEquals(1l, id);
 
     }
 }

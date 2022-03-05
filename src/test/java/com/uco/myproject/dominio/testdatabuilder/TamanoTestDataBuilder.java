@@ -9,7 +9,7 @@ public class TamanoTestDataBuilder {
     private String especificacion;
 
     public TamanoTestDataBuilder() {
-        this.nombre = "juan";
+        this.nombre = "Grande";
         this.especificacion = "Va desde 30 a 50 cm";
     }
 
