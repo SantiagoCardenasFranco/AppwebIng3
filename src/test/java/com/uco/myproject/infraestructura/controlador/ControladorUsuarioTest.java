@@ -43,7 +43,7 @@ class ControladorUsuarioTest {
     RepositorioUsuario repositorioUsuario;
 
     @Test
-    @DisplayName("Debe crear una persona de forma exitosa y luego fallar al crear la misma")
+    @DisplayName("Debe crear un usuario de forma exitosa y luego fallar al crear la misma")
     void crearDuplicadaTest() throws Exception {
 
         // arrange
@@ -96,7 +96,7 @@ class ControladorUsuarioTest {
     }
 
     @Test
-    @DisplayName("Debe listar las personas luego de crearlas")
+    @DisplayName("Debe listar los usuarios luego de crearlos")
     void listarTest() throws Exception {
 
         var dto = new DtoUsuarioTestDataBuilder().build();
