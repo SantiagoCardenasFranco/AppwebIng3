@@ -61,7 +61,7 @@ class ControladorUsuarioTest {
 
 
     @Test
-    @DisplayName("Debe crear una persona de forma exitosa y validar que si quedó guardada")
+    @DisplayName("Debe crear un usuario de forma exitosa y validar que si quedó guardado")
     void crearTest() throws Exception {
 
         var dto = new DtoUsuarioTestDataBuilder().build();
@@ -87,12 +87,12 @@ class ControladorUsuarioTest {
         Long id = respuesta.getValor().longValue();
         Assertions.assertNotNull(id);
 
-        var usuario = repositorioUsuario.consultarPorId(id);
+        var persona = repositorioUsuario.consultarPorId(id);
 
-        Assertions.assertEquals(dto.getNombre(), usuario.getNombre());
-        Assertions.assertEquals(dto.getApellido(), usuario.getApellido());
-        Assertions.assertEquals(dto.getCorreo(), usuario.getCorreo());
-        Assertions.assertEquals(dto.getPassword(), usuario.getPassword());
+        Assertions.assertEquals(dto.getNombre(), persona.getNombre());
+        Assertions.assertEquals(dto.getApellido(), persona.getApellido());
+        Assertions.assertEquals(dto.getCorreo(), persona.getCorreo());
+        Assertions.assertEquals(dto.getPassword(), persona.getPassword());
     }
 
     @Test
