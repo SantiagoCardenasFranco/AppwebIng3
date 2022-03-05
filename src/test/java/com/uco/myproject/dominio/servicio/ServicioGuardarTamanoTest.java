@@ -1,37 +1,14 @@
 package com.uco.myproject.dominio.servicio;
 
 import com.uco.myproject.dominio.modelo.Tamano;
-import com.uco.myproject.dominio.modelo.Usuario;
 import com.uco.myproject.dominio.puerto.RepositorioTamano;
-import com.uco.myproject.dominio.puerto.RepositorioUsuario;
 import com.uco.myproject.dominio.servicio.tamano.ServicioGuardarTamano;
-import com.uco.myproject.dominio.servicio.usuario.ServicioGuardarUsuario;
 import com.uco.myproject.dominio.testdatabuilder.TamanoTestDataBuilder;
-import com.uco.myproject.dominio.testdatabuilder.UsuarioTestDataBuilder;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.mockito.Mockito;
 
-public class ServicioGuardarTamanoList {
-
-    @Test
-    void siNombreYaExisteDeberiaRetornarError() {
-
-        //arrange
-        var tamano = new TamanoTestDataBuilder().build();
-
-        var repositorio = Mockito.mock(RepositorioTamano.class);
-        var servicio = new ServicioGuardarTamano(repositorio);
-
-        Mockito.when(repositorio.existe(Mockito.any())).thenReturn(true);
-
-        //act - assert
-        Assertions.assertEquals("Ya existe la persona con los datos ingresados",
-                Assertions.assertThrows(IllegalStateException.class, () ->
-                        servicio.ejecutar(tamano)
-                ).getMessage());
-
-    }
+public class ServicioGuardarTamanoTest {
 
     @Test
     void guardarExitoso() {
