@@ -31,13 +31,13 @@ import static org.hamcrest.core.Is.is;
 @DirtiesContext(classMode = DirtiesContext.ClassMode.AFTER_EACH_TEST_METHOD)
 class ControladorUsuarioTest {
 
-    @Autowired
+    @Autowired(required = true)
     private ObjectMapper objectMapper;
 
-    @Autowired
+    @Autowired(required = true)
     private MockMvc mocMvc;
 
-    @Autowired
+    @Autowired(required = true)
     RepositorioUsuario repositorioUsuario;
 
     @Test
