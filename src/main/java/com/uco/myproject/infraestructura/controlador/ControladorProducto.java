@@ -31,7 +31,7 @@ public class ControladorProducto {
     }
 
 /*    @PostMapping
-    public DtoRespuesta<Long> crear(@RequestBody EmtidadProducto dto) {
+    public DtoRespuesta<Long> crear(@RequestBody DtoProducto dto) {
         return this.servicioAplicacionGuardarProducto.ejecutar(dto);
     }*/
 }
