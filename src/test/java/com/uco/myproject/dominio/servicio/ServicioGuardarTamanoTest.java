@@ -15,7 +15,7 @@ import org.mockito.Mockito;
 class ServicioGuardarTamanoTest {
 
     @Test
-    void siNombreYaExisteDeberiaRetornarError() {
+    void siNombreExisteDeberiaRetornarError() {
 
         //arrange
         var tamano = new TamanoTestDataBuilder().build();
