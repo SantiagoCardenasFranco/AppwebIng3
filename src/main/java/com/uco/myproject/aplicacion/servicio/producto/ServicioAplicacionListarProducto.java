@@ -10,7 +10,7 @@ import java.util.List;
 @Component
 public class ServicioAplicacionListarProducto {
 
-/*    private final RepositorioProducto repositorioProducto;
+    private final RepositorioProducto repositorioProducto;
 
     public ServicioAplicacionListarProducto(RepositorioProducto repositorioProducto) {
         this.repositorioProducto = repositorioProducto;
@@ -18,5 +18,5 @@ public class ServicioAplicacionListarProducto {
 
     public List<Producto> ejecutar() {
         return this.repositorioProducto.listar();
-    }*/
+    }
 }

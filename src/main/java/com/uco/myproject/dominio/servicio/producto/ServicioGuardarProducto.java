@@ -1,15 +1,13 @@
 package com.uco.myproject.dominio.servicio.producto;
 
-import com.uco.myproject.dominio.modelo.Producto;
-import com.uco.myproject.dominio.modelo.Usuario;
 import com.uco.myproject.dominio.puerto.RepositorioProducto;
-import com.uco.myproject.dominio.puerto.RepositorioUsuario;
+import com.uco.myproject.infraestructura.adaptador.entidad.EntidadProducto;
 import org.springframework.stereotype.Service;
 
 @Service
 public class ServicioGuardarProducto {
 
- /*   private static final String MENSAJE_YA_EXISTE = "Ya existe la persona con los datos ingresados";
+ //private static final String MENSAJE_YA_EXISTE = "Ya existe la persona con los datos ingresados";
 
     private final RepositorioProducto repositorioProducto;
 
@@ -17,11 +15,8 @@ public class ServicioGuardarProducto {
         this.repositorioProducto = repositorioProducto;
     }
 
-    public Long ejecutar(Producto producto) {
+    public Long ejecutar(EntidadProducto producto) {
 
-        if(this.repositorioProducto.existe(producto)) {
-            throw new IllegalStateException(MENSAJE_YA_EXISTE);
-        }
         return this.repositorioProducto.guardar(producto);
-    }*/
+    }
 }

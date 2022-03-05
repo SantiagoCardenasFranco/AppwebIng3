@@ -27,12 +27,19 @@ public class RepositorioProductoPostgresql implements RepositorioProducto {
 
     @Override
     public Producto consultarPorId(Long id) {
-        return  null;
+       /* return this.repositorioProductoJpa
+                .findById(id)
+                .map(entidad -> Producto.of(entidad.getNombre(), entidad.getEntidadUsuario(),
+                        entidad.getEntidadCaracteristica())
+                .orElse(null);*/
+        return null;
     }
 
     @Override
-    public Long guardar(Producto producto) {
-        EntidadProducto entidadProducto = new EntidadProducto();
+    public Long guardar(EntidadProducto producto) {
+
+        EntidadProducto entidadProducto = new EntidadProducto(producto.getNombre(),
+                producto.getEntidadUsuario(), producto.getEntidadCaracteristica());
 
         return this.repositorioProductoJpa.save(entidadProducto).getIdProducto();
     }
