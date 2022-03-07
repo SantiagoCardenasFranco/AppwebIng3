@@ -7,4 +7,6 @@ import org.springframework.stereotype.Repository;
 @Repository
 public interface RepositorioCaracteristicaJpa extends JpaRepository<EntidadCaracteristica, Long> {
 
+    EntidadCaracteristica findByMarca(String marca);
+
 }

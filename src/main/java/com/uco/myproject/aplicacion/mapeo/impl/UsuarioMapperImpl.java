@@ -30,6 +30,22 @@ public class UsuarioMapperImpl implements UsuarioMaper {
     }
 
     @Override
+    public EntidadUsuario DtoUsuarioAEntidadUsuario(DtoUsuario dtoUsuario) {
+        if(dtoUsuario == null)
+        {
+            return null;
+        }
+
+        EntidadUsuario entidadUsuario = new EntidadUsuario();
+        entidadUsuario.setNombre(dtoUsuario.getNombre());
+        entidadUsuario.setCorreo(dtoUsuario.getCorreo());
+        entidadUsuario.setApellido(dtoUsuario.getApellido());
+        entidadUsuario.setPassword(dtoUsuario.getPassword());
+        return entidadUsuario;
+    }
+
+
+    @Override
     public EntidadUsuario usuarioAEntidadUsusario(Usuario usuario) {
         if (usuario == null) {
             return null;

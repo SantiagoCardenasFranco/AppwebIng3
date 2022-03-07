@@ -11,6 +11,6 @@ public interface UsuarioMaper {
 
     DtoUsuario usuarioAUsuarioDto (Usuario usuario);
     Usuario dtoUsuarioAUsuario (DtoUsuario dtoUsuario);
-
+    EntidadUsuario DtoUsuarioAEntidadUsuario(DtoUsuario dtoUsuario);
     EntidadUsuario usuarioAEntidadUsusario (Usuario usuario);
 }

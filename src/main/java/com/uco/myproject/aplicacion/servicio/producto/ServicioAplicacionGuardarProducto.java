@@ -22,6 +22,9 @@ public class ServicioAplicacionGuardarProducto {
 
     public DtoRespuesta<Long> ejecutar(EntidadProducto dto) {
 
+        /*Usuario casteo = UsuarioMapperImpl.INSTANCIA.dtoUsuarioAUsuario(dto.getDtoUsuario());
+        Producto producto = Producto.of(dto.getNombre(), casteo, dto.getDtoCaracteristica());*/
+
         /*DtoUsuario dtoUsuario = new DtoUsuario();
         DtoUsuario dtoUsuario = UsuarioMaper.INSTANCIA.dtoUsuarioAUsuario(new DtoUsuario());*/
         EntidadProducto entidadProducto = new EntidadProducto(dto.getNombre(),
