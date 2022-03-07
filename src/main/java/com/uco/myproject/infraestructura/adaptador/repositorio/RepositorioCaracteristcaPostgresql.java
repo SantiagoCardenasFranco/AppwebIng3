@@ -1,7 +1,10 @@
 package com.uco.myproject.infraestructura.adaptador.repositorio;
 
+import com.uco.myproject.aplicacion.mapeo.impl.TamanoMapperImpl;
 import com.uco.myproject.dominio.modelo.Caracteristica;
 import com.uco.myproject.dominio.modelo.Producto;
+import com.uco.myproject.dominio.modelo.Tamano;
+import com.uco.myproject.dominio.modelo.Usuario;
 import com.uco.myproject.dominio.puerto.RepositorioCaracteristica;
 import com.uco.myproject.dominio.puerto.RepositorioProducto;
 import com.uco.myproject.infraestructura.adaptador.entidad.EntidadCaracteristica;
@@ -25,7 +28,10 @@ public class RepositorioCaracteristcaPostgresql implements RepositorioCaracteris
 
     @Override
     public List<Caracteristica> listar() {
-        return null;
+
+        List<EntidadCaracteristica> entidades = this.repositorioCaracteristicaJpa.findAll();
+        return entidades.stream().map(entidad -> Caracteristica.of(entidad.getMarca(), entidad.getDescripcion(),
+                TamanoMapperImpl.INSTANCIA.entidadTamanoATamano(entidad.getEntidadTamano()), entidad.getNombreProveedor())).toList();
     }
 
     @Override
@@ -35,7 +41,12 @@ public class RepositorioCaracteristcaPostgresql implements RepositorioCaracteris
 
     @Override
     public Long guardar(Caracteristica caracteristica) {
-        return null;
+        EntidadCaracteristica entidadCaracteristica = new EntidadCaracteristica(caracteristica.getMarca(),
+                caracteristica.getDescripcion(),
+                TamanoMapperImpl.INSTANCIA.tamanoAEntidadTamano(caracteristica.getTamano()),
+                caracteristica.getProveedor());
+
+        return this.repositorioCaracteristicaJpa.save(entidadCaracteristica).getId();
     }
 
     @Override

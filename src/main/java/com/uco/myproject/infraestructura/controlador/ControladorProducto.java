@@ -1,15 +1,10 @@
 package com.uco.myproject.infraestructura.controlador;
 
 import com.uco.myproject.aplicacion.dto.DtoProducto;
-import com.uco.myproject.aplicacion.dto.DtoTamano;
 import com.uco.myproject.aplicacion.dto.respuesta.DtoRespuesta;
-import com.uco.myproject.aplicacion.mapeo.impl.UsuarioMapperImpl;
 import com.uco.myproject.aplicacion.servicio.producto.ServicioAplicacionGuardarProducto;
 import com.uco.myproject.aplicacion.servicio.producto.ServicioAplicacionListarProducto;
-import com.uco.myproject.aplicacion.servicio.tamano.ServicioAplicacionGuardarTamano;
-import com.uco.myproject.aplicacion.servicio.tamano.ServicioAplicacionListarTamano;
 import com.uco.myproject.dominio.modelo.Producto;
-import com.uco.myproject.dominio.modelo.Tamano;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -32,9 +27,8 @@ public class ControladorProducto {
         return servicioAplicacionListarProducto.ejecutar();
     }
 
-   /*@PostMapping
+   @PostMapping
     public DtoRespuesta<Long> crear(@RequestBody DtoProducto dto) {
-       //UsuarioMapperImpl.INSTANCIA.DtoUsuarioAEntidadUsuario(dto);
         return this.servicioAplicacionGuardarProducto.ejecutar(dto);
-    }*/
+    }
 }

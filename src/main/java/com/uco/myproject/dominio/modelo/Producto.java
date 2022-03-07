@@ -9,7 +9,7 @@ public class Producto {
     public static Producto of(String nombre, Usuario usuario, Caracteristica caracteristica) {
 
         //validarNumero(idProducto, "La identificación del producto no puede estar vacia");
-        validarObligatorio(nombre, "El nombre no puede ser vacio");
+        validarObligatorio(nombre);
         validarObjeto(usuario, "Un producto debe ser registrado por un usuario");
         validarObjeto(caracteristica, "La caracteristca de un producto no debe estar vacio");
 
@@ -30,9 +30,9 @@ public class Producto {
     }
 
 
-    private static void validarObligatorio(String valor, String mensaje) {
+    private static void validarObligatorio(String valor) {
         if(valor == null || valor.isBlank()) {
-            throw new IllegalArgumentException(mensaje);
+            throw new IllegalArgumentException("El nombre no puede ser vacio");
         }
     }
 

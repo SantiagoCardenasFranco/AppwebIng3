@@ -1,7 +1,6 @@
 package com.uco.myproject.aplicacion.servicio.producto;
 
 import com.uco.myproject.dominio.modelo.Producto;
-import com.uco.myproject.dominio.modelo.Usuario;
 import com.uco.myproject.dominio.puerto.RepositorioProducto;
 import org.springframework.stereotype.Component;
 

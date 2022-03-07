@@ -1,13 +1,11 @@
 package com.uco.myproject.infraestructura.controlador;
 
+import com.uco.myproject.aplicacion.dto.DtoCaracteristica;
+import com.uco.myproject.aplicacion.dto.respuesta.DtoRespuesta;
+import com.uco.myproject.aplicacion.servicio.caracteristica.ServicioAplicacionGuardarCaracteristica;
 import com.uco.myproject.aplicacion.servicio.caracteristica.ServicioAplicacionListarCaracteristica;
-import com.uco.myproject.aplicacion.servicio.producto.ServicioAplicacionGuardarProducto;
-import com.uco.myproject.aplicacion.servicio.producto.ServicioAplicacionListarProducto;
 import com.uco.myproject.dominio.modelo.Caracteristica;
-import com.uco.myproject.dominio.modelo.Producto;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -16,9 +14,11 @@ import java.util.List;
 public class ControladorCaracteristica {
 
     private final ServicioAplicacionListarCaracteristica servicioAplicacionListarCaracteristica;
+    private final ServicioAplicacionGuardarCaracteristica servicioAplicacionGuardarCaracteristica;
 
-    public ControladorCaracteristica(ServicioAplicacionListarCaracteristica servicioAplicacionListarCaracteristica) {
+    public ControladorCaracteristica(ServicioAplicacionListarCaracteristica servicioAplicacionListarCaracteristica, ServicioAplicacionGuardarCaracteristica servicioAplicacionGuardarCaracteristica) {
         this.servicioAplicacionListarCaracteristica = servicioAplicacionListarCaracteristica;
+        this.servicioAplicacionGuardarCaracteristica = servicioAplicacionGuardarCaracteristica;
     }
 
     @GetMapping
@@ -26,9 +26,8 @@ public class ControladorCaracteristica {
         return servicioAplicacionListarCaracteristica.ejecutar();
     }
 
-   /*@PostMapping
-    public DtoRespuesta<Long> crear(@RequestBody DtoProducto dto) {
-       //UsuarioMapperImpl.INSTANCIA.DtoUsuarioAEntidadUsuario(dto);
-        return this.servicioAplicacionGuardarProducto.ejecutar(dto);
-    }*/
+   @PostMapping
+    public DtoRespuesta<Long> crear(@RequestBody DtoCaracteristica dto) {
+        return this.servicioAplicacionGuardarCaracteristica.ejecutar(dto);
+    }
 }

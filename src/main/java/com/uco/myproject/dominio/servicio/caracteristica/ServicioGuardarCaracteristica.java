@@ -1,9 +1,7 @@
 package com.uco.myproject.dominio.servicio.caracteristica;
 
 import com.uco.myproject.dominio.modelo.Caracteristica;
-import com.uco.myproject.dominio.modelo.Usuario;
 import com.uco.myproject.dominio.puerto.RepositorioCaracteristica;
-import com.uco.myproject.dominio.puerto.RepositorioUsuario;
 import org.springframework.stereotype.Service;
 
 @Service

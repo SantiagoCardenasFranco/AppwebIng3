@@ -1,7 +1,5 @@
 package com.uco.myproject.infraestructura.adaptador.entidad;
 
-import com.uco.myproject.dominio.modelo.Usuario;
-
 import javax.persistence.*;
 
 @Entity
@@ -51,15 +49,8 @@ public class EntidadProducto {
         this.nombre = nombre;
     }
 
-    public void setEntidadUsuario(EntidadUsuario entidadUsuario) {
-        this.entidadUsuario = entidadUsuario;
-    }
-
     public EntidadCaracteristica getEntidadCaracteristica() {
         return entidadCaracteristica;
     }
 
-    public void setEntidadCaracteristica(EntidadCaracteristica entidadCaracteristica) {
-        this.entidadCaracteristica = entidadCaracteristica;
-    }
 }

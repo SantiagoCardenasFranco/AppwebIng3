@@ -8,7 +8,8 @@ import org.junit.jupiter.api.Test;
 
 public class MapeoUsuarioTest {
 
-    public void mapeoTest(){
+    //@Test
+     void mapeoTest(){
         Usuario usuario = Usuario.of("Santiago", "Cárdenas Franco",
                 "hsdgahsdbjs", "skhdbcsjhb");
 

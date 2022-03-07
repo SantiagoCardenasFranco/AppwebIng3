@@ -30,30 +30,24 @@ public class UsuarioMapperImpl implements UsuarioMaper {
     }
 
     @Override
-    public EntidadUsuario DtoUsuarioAEntidadUsuario(DtoUsuario dtoUsuario) {
-        if(dtoUsuario == null)
-        {
+    public Usuario entidadUsuarioAUsuario(EntidadUsuario entidadUsuario) {
+        if (entidadUsuario == null) {
             return null;
         }
-
-        EntidadUsuario entidadUsuario = new EntidadUsuario();
-        entidadUsuario.setNombre(dtoUsuario.getNombre());
-        entidadUsuario.setCorreo(dtoUsuario.getCorreo());
-        entidadUsuario.setApellido(dtoUsuario.getApellido());
-        entidadUsuario.setPassword(dtoUsuario.getPassword());
-        return entidadUsuario;
+        return Usuario.of(entidadUsuario.getNombre(), entidadUsuario.getApellido(), entidadUsuario.getCorreo(),
+                entidadUsuario.getPassword());
     }
 
-
     @Override
-    public EntidadUsuario usuarioAEntidadUsusario(Usuario usuario) {
-        if (usuario == null) {
+    public EntidadUsuario usuarioAEntidadUsuario(Usuario usuario) {
+        if(usuario == null)
+        {
             return null;
         }
         EntidadUsuario entidadUsuario = new EntidadUsuario();
         entidadUsuario.setNombre(usuario.getNombre());
-        entidadUsuario.setApellido(usuario.getApellido());
         entidadUsuario.setCorreo(usuario.getCorreo());
+        entidadUsuario.setApellido(usuario.getApellido());
         entidadUsuario.setPassword(usuario.getPassword());
         return entidadUsuario;
     }

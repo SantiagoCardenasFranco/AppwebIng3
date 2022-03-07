@@ -20,4 +20,12 @@ public class DtoTamano {
     public String getEspecificacion() {
         return especificacion;
     }
+
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
+
+    public void setEspecificacion(String especificacion) {
+        this.especificacion = especificacion;
+    }
 }

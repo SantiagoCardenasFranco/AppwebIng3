@@ -11,7 +11,7 @@ public class Caracteristica {
 
         validarObligatorio(marca, "La marca no puede ser vacio");
         validarObligatorio(descripcion, "La descripcion no puede ser vacia");
-        validarObjeto(tamano, "El tamaño no puede ser vacio");
+        validarObjeto(tamano);
         validarObligatorio(proveedor, "La contraseña no puede estar vacia");
 
         return new Caracteristica(marca, descripcion, tamano, proveedor);
@@ -24,9 +24,9 @@ public class Caracteristica {
         this.proveedor = proveedor;
     }
 
-    private static void validarObjeto(Object objeto, String mensaje){
+    private static void validarObjeto(Object objeto){
         if(objeto == null){
-            throw new IllegalArgumentException(mensaje);
+            throw new IllegalArgumentException("El tamaño no puede ser vacio");
         }
     }
 

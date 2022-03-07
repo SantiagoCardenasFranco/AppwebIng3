@@ -1,5 +1,8 @@
 package com.uco.myproject.infraestructura.adaptador.repositorio;
 
+import com.uco.myproject.aplicacion.mapeo.impl.CaracteristicaMapperImpl;
+import com.uco.myproject.aplicacion.mapeo.impl.TamanoMapperImpl;
+import com.uco.myproject.aplicacion.mapeo.impl.UsuarioMapperImpl;
 import com.uco.myproject.dominio.modelo.Producto;
 import com.uco.myproject.dominio.modelo.Usuario;
 import com.uco.myproject.dominio.puerto.RepositorioProducto;
@@ -22,24 +25,27 @@ public class RepositorioProductoPostgresql implements RepositorioProducto {
 
     @Override
     public List<Producto> listar() {
-        return null;
+        List<EntidadProducto> entidades = this.repositorioProductoJpa.findAll();
+        return entidades.stream().map(entidad -> Producto.of(entidad.getNombre(),
+                UsuarioMapperImpl.INSTANCIA.entidadUsuarioAUsuario(entidad.getEntidadUsuario()),
+                CaracteristicaMapperImpl.INSTANCIA.entidadCaracteristicaACaracteristica(entidad.getEntidadCaracteristica()))).toList();
     }
 
     @Override
     public Producto consultarPorId(Long id) {
-       /* return this.repositorioProductoJpa
+       return this.repositorioProductoJpa
                 .findById(id)
-                .map(entidad -> Producto.of(entidad.getNombre(), entidad.getEntidadUsuario(),
-                        entidad.getEntidadCaracteristica())
-                .orElse(null);*/
-        return null;
+                .map(entidad -> Producto.of(entidad.getNombre(), UsuarioMapperImpl.INSTANCIA.entidadUsuarioAUsuario(entidad.getEntidadUsuario()),
+                                CaracteristicaMapperImpl.INSTANCIA.entidadCaracteristicaACaracteristica(entidad.getEntidadCaracteristica())))
+               .orElse(null);
     }
 
     @Override
-    public Long guardar(EntidadProducto producto) {
+    public Long guardar(Producto producto) {
 
         EntidadProducto entidadProducto = new EntidadProducto(producto.getNombre(),
-                producto.getEntidadUsuario(), producto.getEntidadCaracteristica());
+                UsuarioMapperImpl.INSTANCIA.usuarioAEntidadUsuario(producto.getUsuario()),
+                CaracteristicaMapperImpl.INSTANCIA.caracteristicaAEntidadCaracteristica(producto.getCaracteristica()));
 
         return this.repositorioProductoJpa.save(entidadProducto).getIdProducto();
     }
