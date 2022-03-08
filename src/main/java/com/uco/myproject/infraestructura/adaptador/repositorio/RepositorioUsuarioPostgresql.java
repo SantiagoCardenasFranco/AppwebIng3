@@ -1,5 +1,6 @@
 package com.uco.myproject.infraestructura.adaptador.repositorio;
 
+import com.uco.myproject.dominio.dto.DtoUsuarioResumen;
 import com.uco.myproject.dominio.modelo.Usuario;
 import com.uco.myproject.dominio.puerto.RepositorioUsuario;
 import com.uco.myproject.infraestructura.adaptador.entidad.EntidadUsuario;
@@ -17,18 +18,11 @@ public class RepositorioUsuarioPostgresql implements RepositorioUsuario {
     }
 
    @Override
-    public List<Usuario> listar() {
+    public List<DtoUsuarioResumen> listar() {
         List<EntidadUsuario> entidades = this.repositorioUsuarioJpa.findAll();
-        return entidades.stream().map(entidad -> Usuario.of(entidad.getNombre(), entidad.getApellido(),
-                entidad.getCorreo(), entidad.getPassword())).toList();
-    }
-
-/*    @Override
-    public List<usuarioResumen> listar() {
-        List<EntidadUsuario> entidades = this.repositorioUsuarioJpa.findAll();
-        return entidades.stream().map(entidad -> new usuarioResumen(entidad.getNombre(), entidad.getApellido(),
+        return entidades.stream().map(entidad -> new DtoUsuarioResumen(entidad.getNombre(), entidad.getApellido(),
                 entidad.getCorreo())).toList();
-    }*/
+    }
 
     @Override
     public Usuario consultarPorId(Long id) {

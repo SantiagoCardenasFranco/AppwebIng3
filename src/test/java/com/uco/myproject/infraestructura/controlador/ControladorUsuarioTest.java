@@ -42,6 +42,9 @@ class ControladorUsuarioTest {
     @Autowired
     RepositorioUsuario repositorioUsuario;
 
+    ControladorUsuarioTest() {
+    }
+
     @Test
     @DisplayName("Debe crear un usuario de forma exitosa y luego fallar al crear el mismo")
     void crearDuplicadaTest() throws Exception {
@@ -108,8 +111,6 @@ class ControladorUsuarioTest {
                 .andExpect(status().isOk())
                 .andExpect(jsonPath("$[0].nombre", is(dto.getNombre())))
                 .andExpect(jsonPath("$[0].apellido", is(dto.getApellido())))
-                .andExpect(jsonPath("$[0].correo", is(dto.getCorreo())))
-                .andExpect(jsonPath("$[0].password", is(dto.getPassword())));
+                .andExpect(jsonPath("$[0].correo", is(dto.getCorreo())));
     }
-    //Mejorar
 }

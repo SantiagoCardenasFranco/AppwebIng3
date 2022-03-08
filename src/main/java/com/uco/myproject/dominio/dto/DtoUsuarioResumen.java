@@ -1,12 +1,15 @@
 package com.uco.myproject.dominio.dto;
 
-public class dtoUsuarioResumen {
+public class DtoUsuarioResumen {
 
     private String nombre;
     private String apellido;
     private String correo;
 
-    public dtoUsuarioResumen(String nombre, String apellido, String correo) {
+    public DtoUsuarioResumen() {
+    }
+
+    public DtoUsuarioResumen(String nombre, String apellido, String correo) {
         this.nombre = nombre;
         this.apellido = apellido;
         this.correo = correo;

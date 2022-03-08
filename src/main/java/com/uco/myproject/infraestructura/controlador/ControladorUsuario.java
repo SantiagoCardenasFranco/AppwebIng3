@@ -6,6 +6,7 @@ import com.uco.myproject.aplicacion.servicio.usuario.ServicioAplicacionGuardarUs
 import com.uco.myproject.aplicacion.servicio.usuario.ServicioAplicacionListarUsuario;
 import com.uco.myproject.aplicacion.dto.DtoUsuario;
 import com.uco.myproject.aplicacion.dto.respuesta.DtoRespuesta;
+import com.uco.myproject.dominio.dto.DtoUsuarioResumen;
 import com.uco.myproject.dominio.modelo.Usuario;
 import org.springframework.web.bind.annotation.*;
 
@@ -31,7 +32,7 @@ public class ControladorUsuario {
     }
 
     @GetMapping
-    public List<Usuario> listar() {
+    public List<DtoUsuarioResumen> listar() {
         return servicioAplicacionListarUsuario.ejecutar();
     }
 
