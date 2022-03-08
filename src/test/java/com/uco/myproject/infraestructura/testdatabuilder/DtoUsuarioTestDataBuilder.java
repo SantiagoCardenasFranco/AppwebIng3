@@ -10,10 +10,10 @@ public class DtoUsuarioTestDataBuilder {
     private String password;
 
     public DtoUsuarioTestDataBuilder() {
-        this.nombre = "juan";
-        this.apellido = "castaño";
+        this.nombre = "Santiago";
+        this.apellido = "Cárdenas";
         this.correo = "jhdfbjhd";
-        this.password = "sbdfujdsh";
+        this.password = "jydfbdsjhb48A";
     }
 
     public DtoUsuarioTestDataBuilder conNombre(String nombre) {

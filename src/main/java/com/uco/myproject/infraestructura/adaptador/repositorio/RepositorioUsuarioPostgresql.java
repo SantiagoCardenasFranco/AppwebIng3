@@ -16,12 +16,19 @@ public class RepositorioUsuarioPostgresql implements RepositorioUsuario {
         this.repositorioUsuarioJpa = repositorioUsuarioJpa;
     }
 
-    @Override
+   @Override
     public List<Usuario> listar() {
         List<EntidadUsuario> entidades = this.repositorioUsuarioJpa.findAll();
         return entidades.stream().map(entidad -> Usuario.of(entidad.getNombre(), entidad.getApellido(),
                 entidad.getCorreo(), entidad.getPassword())).toList();
     }
+
+/*    @Override
+    public List<usuarioResumen> listar() {
+        List<EntidadUsuario> entidades = this.repositorioUsuarioJpa.findAll();
+        return entidades.stream().map(entidad -> new usuarioResumen(entidad.getNombre(), entidad.getApellido(),
+                entidad.getCorreo())).toList();
+    }*/
 
     @Override
     public Usuario consultarPorId(Long id) {

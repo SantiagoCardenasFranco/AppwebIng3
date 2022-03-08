@@ -43,7 +43,7 @@ class ControladorUsuarioTest {
     RepositorioUsuario repositorioUsuario;
 
     @Test
-    @DisplayName("Debe crear una persona de forma exitosa y luego fallar al crear la misma")
+    @DisplayName("Debe crear un usuario de forma exitosa y luego fallar al crear el mismo")
     void crearDuplicadaTest() throws Exception {
 
         // arrange
@@ -61,7 +61,7 @@ class ControladorUsuarioTest {
 
 
     @Test
-    @DisplayName("Debe crear una persona de forma exitosa y validar que si quedó guardada")
+    @DisplayName("Debe crear un usuario de forma exitosa y validar que si quedó guardado")
     void crearTest() throws Exception {
 
         var dto = new DtoUsuarioTestDataBuilder().build();
@@ -96,7 +96,7 @@ class ControladorUsuarioTest {
     }
 
     @Test
-    @DisplayName("Debe listar las personas luego de crearlas")
+    @DisplayName("Debe listar los usuarios luego de crearlos")
     void listarTest() throws Exception {
 
         var dto = new DtoUsuarioTestDataBuilder().build();
@@ -111,4 +111,5 @@ class ControladorUsuarioTest {
                 .andExpect(jsonPath("$[0].correo", is(dto.getCorreo())))
                 .andExpect(jsonPath("$[0].password", is(dto.getPassword())));
     }
+    //Mejorar
 }

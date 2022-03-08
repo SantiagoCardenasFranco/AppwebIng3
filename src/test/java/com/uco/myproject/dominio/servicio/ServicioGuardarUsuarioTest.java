@@ -22,7 +22,7 @@ class ServicioGuardarUsuarioTest {
         Mockito.when(repositorio.existe(Mockito.any())).thenReturn(true);
 
         //act - assert
-        Assertions.assertEquals("Ya existe la persona con los datos ingresados",
+        Assertions.assertEquals("Ya existe el usuario con los datos ingresados",
                 Assertions.assertThrows(IllegalStateException.class, () ->
             servicio.ejecutar(usuario)
         ).getMessage());

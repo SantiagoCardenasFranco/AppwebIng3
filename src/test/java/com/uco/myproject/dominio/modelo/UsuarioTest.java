@@ -10,18 +10,18 @@ class UsuarioTest {
         //patron 3a
 
         //arrange (prepara todos los datos para la prueba)
-        String nombre = "juan";
-        String apellido = "castaño";
+        String nombre = "Santiago";
+        String apellido = "Cárdenas";
         String correo = "jrsbjhfd";
-        String password = "jydfbdsjhb";
+        String password = "jydfbdsjhb48A";
 
         //act (ejecuta el metodo a probar)
         Usuario usuario = Usuario.of(nombre, apellido, correo, password);
 
         //assert se valida el resultado
 
-        Assertions.assertEquals("juan", usuario.getNombre());
-        Assertions.assertEquals("castaño", usuario.getApellido());
+        Assertions.assertEquals("Santiago", usuario.getNombre());
+        Assertions.assertEquals("Cárdenas", usuario.getApellido());
     }
 
     @Test
@@ -30,9 +30,9 @@ class UsuarioTest {
 
         //arrange (prepara todos los datos para la prueba)
         String nombre = null;
-        String apellido = "castaño";
+        String apellido = "Cárdenas";
         String correo = "jrsbjhfd";
-        String password = "jydfbdsjhb";
+        String password = "jydfbdsjhb48A";
 
         //act - assert (ejecuta el metodo a probar)
 
@@ -47,9 +47,9 @@ class UsuarioTest {
 
         //arrange (prepara todos los datos para la prueba)
         String nombre = "";
-        String apellido = "castaño";
+        String apellido = "Cárdenas";
         String correo = "jrsbjhfd";
-        String password = "jydfbdsjhb";
+        String password = "jydfbdsjhb48A";
 
         //act - assert (ejecuta el metodo a probar)
 
