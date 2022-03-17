@@ -9,7 +9,7 @@ public class Caracteristica {
 
     public static Caracteristica of(String marca, String descripcion, Tamano tamano, String proveedor) {
 
-        validarObligatorio(marca, "La marca no puede ser vacio");
+        validarObligatorio(marca, "La marca no puede ser vacia");
         validarObligatorio(descripcion, "La descripcion no puede ser vacia");
         validarObjeto(tamano);
         validarObligatorio(proveedor, "La contraseña no puede estar vacia");

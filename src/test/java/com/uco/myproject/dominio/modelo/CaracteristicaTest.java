@@ -38,7 +38,7 @@ public class CaracteristicaTest {
 
         //act - assert (ejecuta el metodo a probar)
 
-        Assertions.assertEquals("El nombre no puede ser vacio",Assertions.assertThrows(IllegalArgumentException.class, () ->
+        Assertions.assertEquals("La marca no puede ser vacia",Assertions.assertThrows(IllegalArgumentException.class, () ->
                 Caracteristica.of(marca, descripcion, tamano, proveedor)
         ).getMessage());
     }
@@ -55,7 +55,7 @@ public class CaracteristicaTest {
 
         //act - assert (ejecuta el metodo a probar)
 
-        Assertions.assertEquals("El nombre no puede ser vacio",Assertions.assertThrows(IllegalArgumentException.class, () ->
+        Assertions.assertEquals("La marca no puede ser vacia",Assertions.assertThrows(IllegalArgumentException.class, () ->
                 Caracteristica.of(marca, descripcion, tamano, proveedor)
         ).getMessage());
     }
