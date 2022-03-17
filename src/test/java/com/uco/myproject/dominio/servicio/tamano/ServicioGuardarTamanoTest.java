@@ -1,4 +1,4 @@
-package com.uco.myproject.dominio.servicio;
+package com.uco.myproject.dominio.servicio.tamano;
 
 import com.uco.myproject.dominio.modelo.Tamano;
 import com.uco.myproject.dominio.puerto.RepositorioTamano;
