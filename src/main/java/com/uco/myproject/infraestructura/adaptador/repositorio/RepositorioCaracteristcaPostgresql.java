@@ -2,16 +2,12 @@ package com.uco.myproject.infraestructura.adaptador.repositorio;
 
 import com.uco.myproject.aplicacion.mapeo.impl.TamanoMapperImpl;
 import com.uco.myproject.dominio.modelo.Caracteristica;
-import com.uco.myproject.dominio.modelo.Producto;
 import com.uco.myproject.dominio.modelo.Tamano;
-import com.uco.myproject.dominio.modelo.Usuario;
 import com.uco.myproject.dominio.puerto.RepositorioCaracteristica;
-import com.uco.myproject.dominio.puerto.RepositorioProducto;
 import com.uco.myproject.infraestructura.adaptador.entidad.EntidadCaracteristica;
-import com.uco.myproject.infraestructura.adaptador.entidad.EntidadProducto;
-import com.uco.myproject.infraestructura.adaptador.entidad.EntidadUsuario;
+import com.uco.myproject.infraestructura.adaptador.entidad.EntidadTamano;
 import com.uco.myproject.infraestructura.adaptador.repositorio.jpa.RepositorioCaracteristicaJpa;
-import com.uco.myproject.infraestructura.adaptador.repositorio.jpa.RepositorioProductoJpa;
+import com.uco.myproject.infraestructura.adaptador.repositorio.jpa.RepositorioTamanoJpa;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
@@ -20,9 +16,11 @@ import java.util.List;
 public class RepositorioCaracteristcaPostgresql implements RepositorioCaracteristica {
 
     private final RepositorioCaracteristicaJpa repositorioCaracteristicaJpa;
+    private final RepositorioTamanoJpa repositorioTamanoJpa;
 
-    public RepositorioCaracteristcaPostgresql(RepositorioCaracteristicaJpa repositorioCaracteristicaJpa) {
+    public RepositorioCaracteristcaPostgresql(RepositorioCaracteristicaJpa repositorioCaracteristicaJpa, RepositorioTamanoJpa repositorioTamanoJpa) {
         this.repositorioCaracteristicaJpa = repositorioCaracteristicaJpa;
+        this.repositorioTamanoJpa = repositorioTamanoJpa;
     }
 
 
@@ -31,7 +29,7 @@ public class RepositorioCaracteristcaPostgresql implements RepositorioCaracteris
 
         List<EntidadCaracteristica> entidades = this.repositorioCaracteristicaJpa.findAll();
         return entidades.stream().map(entidad -> Caracteristica.of(entidad.getMarca(), entidad.getDescripcion(),
-                TamanoMapperImpl.INSTANCIA.entidadTamanoATamano(entidad.getEntidadTamano()), entidad.getNombreProveedor())).toList();
+                Tamano.of(entidad.getEntidadTamano().getNombre(), entidad.getEntidadTamano().getEspecificacion()), entidad.getNombreProveedor())).toList();
     }
 
     @Override
@@ -41,9 +39,11 @@ public class RepositorioCaracteristcaPostgresql implements RepositorioCaracteris
 
     @Override
     public Long guardar(Caracteristica caracteristica) {
+        EntidadTamano entidadTamano = this.repositorioTamanoJpa.findByNombreAndEspecificacion(caracteristica.getTamano().getNombre(),
+                caracteristica.getTamano().getEspecificacion());
         EntidadCaracteristica entidadCaracteristica = new EntidadCaracteristica(caracteristica.getMarca(),
                 caracteristica.getDescripcion(),
-                TamanoMapperImpl.INSTANCIA.tamanoAEntidadTamano(caracteristica.getTamano()),
+                entidadTamano,
                 caracteristica.getProveedor());
 
         return this.repositorioCaracteristicaJpa.save(entidadCaracteristica).getId();
@@ -62,11 +62,14 @@ public class RepositorioCaracteristcaPostgresql implements RepositorioCaracteris
 
     @Override
     public Boolean actualizar(Long id, Caracteristica caracteristica) {
+        EntidadTamano entidadTamano = this.repositorioTamanoJpa.findByNombreAndEspecificacion(caracteristica.getTamano().getNombre(),
+                caracteristica.getTamano().getEspecificacion());
         repositorioCaracteristicaJpa.findById(id);
         EntidadCaracteristica entidadCaracteristica = new EntidadCaracteristica();
         entidadCaracteristica.setId(id);
         entidadCaracteristica.setDescripcion(caracteristica.getDescripcion());
         entidadCaracteristica.setMarca(caracteristica.getMarca());
+        entidadCaracteristica.setEntidadTamano(entidadTamano);
         entidadCaracteristica.setNombreProveedor(caracteristica.getProveedor());
         repositorioCaracteristicaJpa.save(entidadCaracteristica);
         return true;

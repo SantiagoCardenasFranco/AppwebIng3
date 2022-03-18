@@ -9,7 +9,8 @@ public class DtoUsuarioResumen {
     public DtoUsuarioResumen() {
     }
 
-    public DtoUsuarioResumen(String nombre, String apellido, String correo) {
+    public DtoUsuarioResumen(String nombre, String apellido, String correo
+                             ) {
         this.nombre = nombre;
         this.apellido = apellido;
         this.correo = correo;

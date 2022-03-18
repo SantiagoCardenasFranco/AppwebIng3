@@ -1,5 +1,10 @@
 package com.uco.myproject.aplicacion.dto;
 
+import lombok.Getter;
+import lombok.Setter;
+
+@Getter
+@Setter
 public class DtoTamano {
 
     private String nombre;
@@ -10,22 +15,6 @@ public class DtoTamano {
 
     public DtoTamano(String nombre, String especificacion) {
         this.nombre = nombre;
-        this.especificacion = especificacion;
-    }
-
-    public String getNombre() {
-        return nombre;
-    }
-
-    public String getEspecificacion() {
-        return especificacion;
-    }
-
-    public void setNombre(String nombre) {
-        this.nombre = nombre;
-    }
-
-    public void setEspecificacion(String especificacion) {
         this.especificacion = especificacion;
     }
 }

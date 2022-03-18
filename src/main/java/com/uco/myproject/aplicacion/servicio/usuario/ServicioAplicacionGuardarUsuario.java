@@ -17,7 +17,8 @@ public class ServicioAplicacionGuardarUsuario {
 
     public DtoRespuesta<Long> ejecutar(DtoUsuario dto) {
 
-        Usuario usuario = Usuario.of(dto.getNombre(), dto.getApellido(), dto.getCorreo(), dto.getPassword());
+        Usuario usuario = Usuario.of(dto.getNombre(), dto.getApellido(), dto.getCorreo(),
+                dto.getPassword());
 
         return new DtoRespuesta<>(this.servicioGuardarUsuario.ejecutar(usuario));
     }

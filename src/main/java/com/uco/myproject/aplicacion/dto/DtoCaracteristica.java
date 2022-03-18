@@ -1,5 +1,10 @@
 package com.uco.myproject.aplicacion.dto;
 
+import lombok.Getter;
+import lombok.Setter;
+
+@Getter
+@Setter
 public class DtoCaracteristica {
 
     private String marca;
@@ -14,38 +19,6 @@ public class DtoCaracteristica {
         this.marca = marca;
         this.descripcion = descripcion;
         this.dtoTamano = dtoTamano;
-        this.proveedor = proveedor;
-    }
-
-    public String getMarca() {
-        return marca;
-    }
-
-    public String getDescripcion() {
-        return descripcion;
-    }
-
-    public DtoTamano getDtoTamano() {
-        return dtoTamano;
-    }
-
-    public String getProveedor() {
-        return proveedor;
-    }
-
-    public void setMarca(String marca) {
-        this.marca = marca;
-    }
-
-    public void setDescripcion(String descripcion) {
-        this.descripcion = descripcion;
-    }
-
-    public void setDtoTamano(DtoTamano dtoTamano) {
-        this.dtoTamano = dtoTamano;
-    }
-
-    public void setProveedor(String proveedor) {
         this.proveedor = proveedor;
     }
 }

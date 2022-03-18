@@ -1,5 +1,7 @@
 package com.uco.myproject.dominio.modelo;
+import lombok.Getter;
 
+@Getter
 public class Usuario {
 
     private final String nombre;
@@ -28,20 +30,5 @@ public class Usuario {
         if(valor == null || valor.isBlank()) {
             throw new IllegalArgumentException(mensaje);
         }
-    }
-
-    public String getNombre() {
-        return nombre;
-    }
-
-    public String getApellido() {
-        return apellido;
-    }
-
-    public String getCorreo() {
-        return correo;
-    }
-    public String getPassword() {
-        return password;
     }
 }
