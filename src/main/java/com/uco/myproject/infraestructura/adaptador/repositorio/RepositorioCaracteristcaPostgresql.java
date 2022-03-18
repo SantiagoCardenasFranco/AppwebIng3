@@ -1,6 +1,5 @@
 package com.uco.myproject.infraestructura.adaptador.repositorio;
 
-import com.uco.myproject.aplicacion.mapeo.impl.TamanoMapperImpl;
 import com.uco.myproject.dominio.modelo.Caracteristica;
 import com.uco.myproject.dominio.modelo.Tamano;
 import com.uco.myproject.dominio.puerto.RepositorioCaracteristica;

@@ -1,7 +1,5 @@
 package com.uco.myproject.infraestructura.adaptador.repositorio;
 
-import com.uco.myproject.aplicacion.mapeo.impl.CaracteristicaMapperImpl;
-import com.uco.myproject.aplicacion.mapeo.impl.UsuarioMapperImpl;
 import com.uco.myproject.dominio.modelo.Caracteristica;
 import com.uco.myproject.dominio.modelo.Producto;
 import com.uco.myproject.dominio.modelo.Tamano;
@@ -50,8 +48,16 @@ public class RepositorioProductoPostgresql implements RepositorioProducto {
     public Producto consultarPorId(Long id) {
        return this.repositorioProductoJpa
                 .findById(id)
-                .map(entidad -> Producto.of(entidad.getNombre(), UsuarioMapperImpl.INSTANCIA.entidadUsuarioAUsuario(entidad.getEntidadUsuario()),
-                                CaracteristicaMapperImpl.INSTANCIA.entidadCaracteristicaACaracteristica(entidad.getEntidadCaracteristica())))
+                .map(entidad -> Producto.of(entidad.getNombre(),
+                        Usuario.of(entidad.getEntidadUsuario().getNombre(),
+                                entidad.getEntidadUsuario().getApellido(),
+                                entidad.getEntidadUsuario().getCorreo(),
+                                entidad.getEntidadUsuario().getPassword()),
+                        Caracteristica.of(entidad.getEntidadCaracteristica().getMarca(),
+                                entidad.getEntidadCaracteristica().getDescripcion(),
+                                Tamano.of(entidad.getEntidadCaracteristica().getEntidadTamano().getNombre(),
+                                        entidad.getEntidadCaracteristica().getEntidadTamano().getEspecificacion()),
+                                entidad.getEntidadCaracteristica().getNombreProveedor())))
                .orElse(null);
     }
 
