@@ -1,8 +1,8 @@
 package com.uco.myproject.dominio.modelo;
 
 import lombok.Getter;
-import com.uco.myproject.dominio.validador.validadorAtributos;
-import com.uco.myproject.dominio.validador.validadorObjeto;
+import com.uco.myproject.dominio.validador.ValidadorAtributos;
+import com.uco.myproject.dominio.validador.ValidadorObjeto;
 
 @Getter
 public class Caracteristica {
@@ -14,10 +14,10 @@ public class Caracteristica {
 
     public static Caracteristica of(String marca, String descripcion, Tamano tamano, String proveedor) {
 
-        validadorAtributos.validarObligatorio(marca, "La marca no puede ser vacia");
-        validadorAtributos.validarObligatorio(descripcion, "La descripcion no puede ser vacia");
-        validadorObjeto.validarObjeto(tamano, "El tamaño no puede ser vacio");
-        validadorAtributos.validarObligatorio(proveedor, "La contraseña no puede estar vacia");
+        ValidadorAtributos.validarObligatorio(marca, "La marca no puede ser vacia");
+        ValidadorAtributos.validarObligatorio(descripcion, "La descripcion no puede ser vacia");
+        ValidadorObjeto.validarObjeto(tamano, "El tamaño no puede ser vacio");
+        ValidadorAtributos.validarObligatorio(proveedor, "La contraseña no puede estar vacia");
 
         return new Caracteristica(marca, descripcion, tamano, proveedor);
     }

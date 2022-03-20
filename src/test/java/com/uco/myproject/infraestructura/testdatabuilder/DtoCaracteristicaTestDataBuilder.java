@@ -2,8 +2,6 @@ package com.uco.myproject.infraestructura.testdatabuilder;
 
 import com.uco.myproject.aplicacion.dto.DtoCaracteristica;
 import com.uco.myproject.aplicacion.dto.DtoTamano;
-import com.uco.myproject.dominio.modelo.Caracteristica;
-import com.uco.myproject.dominio.modelo.Tamano;
 
 public class DtoCaracteristicaTestDataBuilder {
 

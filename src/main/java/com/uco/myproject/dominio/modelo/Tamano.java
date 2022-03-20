@@ -1,6 +1,6 @@
 package com.uco.myproject.dominio.modelo;
 import lombok.Getter;
-import com.uco.myproject.dominio.validador.validadorAtributos;
+import com.uco.myproject.dominio.validador.ValidadorAtributos;
 
 @Getter
 public class Tamano {
@@ -10,8 +10,8 @@ public class Tamano {
 
     public static Tamano of(String nombre, String especificacion) {
 
-        validadorAtributos.validarObligatorio(nombre, "El nombre no puede ser vacio");
-        validadorAtributos.validarObligatorio(especificacion, "La especificación no puede estar vacia");
+        ValidadorAtributos.validarObligatorio(nombre, "El nombre no puede ser vacio");
+        ValidadorAtributos.validarObligatorio(especificacion, "La especificación no puede estar vacia");
 
         return new Tamano(nombre, especificacion);
     }

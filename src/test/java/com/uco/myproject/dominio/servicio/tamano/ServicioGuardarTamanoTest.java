@@ -2,16 +2,12 @@ package com.uco.myproject.dominio.servicio.tamano;
 
 import com.uco.myproject.dominio.modelo.Tamano;
 import com.uco.myproject.dominio.puerto.RepositorioTamano;
-import com.uco.myproject.dominio.puerto.RepositorioUsuario;
-import com.uco.myproject.dominio.servicio.tamano.ServicioGuardarTamano;
-import com.uco.myproject.dominio.servicio.usuario.ServicioGuardarUsuario;
 import com.uco.myproject.dominio.testdatabuilder.TamanoTestDataBuilder;
-import com.uco.myproject.dominio.testdatabuilder.UsuarioTestDataBuilder;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.mockito.Mockito;
 
-public class ServicioGuardarTamanoTest {
+class ServicioGuardarTamanoTest {
 
     @Test
     void siNombreTamanoYaExisteDeberiaRetornarError() {
@@ -41,14 +37,14 @@ public class ServicioGuardarTamanoTest {
         var servicio = new ServicioGuardarTamano(repositorio);
 
 
-        Mockito.when(repositorio.guardar(Mockito.any(Tamano.class))).thenReturn(1l);
+        Mockito.when(repositorio.guardar(Mockito.any(Tamano.class))).thenReturn(1L);
 
         // act
         var id = servicio.ejecutar(tamano);
 
         // assert
         Mockito.verify(repositorio, Mockito.times(1)).guardar(tamano);
-        Assertions.assertEquals(1l, id);
+        Assertions.assertEquals(1L, id);
 
     }
 }

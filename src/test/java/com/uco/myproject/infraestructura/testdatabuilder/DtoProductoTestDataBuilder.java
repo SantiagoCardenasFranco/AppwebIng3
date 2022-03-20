@@ -14,8 +14,8 @@ public class DtoProductoTestDataBuilder {
     public DtoProductoTestDataBuilder() {
         DtoTamano dtoTamano = new DtoTamano("Grande", "Va desde 32 a 50 cm");
         this.nombre = "ProductoUno";
-        this.dtoUsuario =  new DtoUsuario("Santiago", "Cárdenas", "sjhbcjsnd",
-                "avsyxgbaj");
+        this.dtoUsuario =  new DtoUsuario("Santiago", "Cárdenas", "santicarfranco8@gmmail.com",
+                "w3Unpo<code>t0d0");
         this.dtoCaracteristica = new DtoCaracteristica("LG", "Fundación",
                 dtoTamano, "Gerente de LG");
     }

@@ -3,7 +3,7 @@ package com.uco.myproject.dominio.modelo;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
-public class CaracteristicaTest {
+class CaracteristicaTest {
 
     @Test
     void validarCreacionExitosa() {

@@ -1,8 +1,8 @@
 package com.uco.myproject.dominio.modelo;
 
 import lombok.Getter;
-import com.uco.myproject.dominio.validador.validadorAtributos;
-import com.uco.myproject.dominio.validador.validadorObjeto;
+import com.uco.myproject.dominio.validador.ValidadorAtributos;
+import com.uco.myproject.dominio.validador.ValidadorObjeto;
 
 @Getter
 public class Producto {
@@ -13,9 +13,9 @@ public class Producto {
 
     public static Producto of(String nombre, Usuario usuario, Caracteristica caracteristica) {
 
-        validadorAtributos.validarObligatorio(nombre, "El nombre no puede ser vacio");
-        validadorObjeto.validarObjeto(usuario, "Un producto debe ser registrado por un usuario");
-        validadorObjeto.validarObjeto(caracteristica, "La caracteristca de un producto no debe estar vacio");
+        ValidadorAtributos.validarObligatorio(nombre, "El nombre no puede ser vacio");
+        ValidadorObjeto.validarObjeto(usuario, "Un producto debe ser registrado por un usuario");
+        ValidadorObjeto.validarObjeto(caracteristica, "La caracteristca de un producto no debe estar vacio");
 
         return new Producto(nombre, usuario, caracteristica);
     }

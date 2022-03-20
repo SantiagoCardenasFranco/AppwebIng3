@@ -1,7 +1,6 @@
 package com.uco.myproject.infraestructura.controlador;
 
 import com.uco.myproject.aplicacion.dto.DtoCaracteristica;
-import com.uco.myproject.aplicacion.dto.DtoUsuario;
 import com.uco.myproject.aplicacion.dto.respuesta.DtoRespuesta;
 import com.uco.myproject.aplicacion.servicio.caracteristica.ServicioAplicacionActualizarCaracteristica;
 import com.uco.myproject.aplicacion.servicio.caracteristica.ServicioAplicacionEliminarCaracteristica;
