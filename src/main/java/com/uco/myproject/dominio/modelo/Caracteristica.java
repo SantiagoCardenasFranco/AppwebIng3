@@ -1,5 +1,10 @@
 package com.uco.myproject.dominio.modelo;
 
+import lombok.Getter;
+import com.uco.myproject.dominio.validador.validadorAtributos;
+import com.uco.myproject.dominio.validador.validadorObjeto;
+
+@Getter
 public class Caracteristica {
 
     private final String marca;
@@ -9,10 +14,10 @@ public class Caracteristica {
 
     public static Caracteristica of(String marca, String descripcion, Tamano tamano, String proveedor) {
 
-        validarObligatorio(marca, "La marca no puede ser vacia");
-        validarObligatorio(descripcion, "La descripcion no puede ser vacia");
-        validarObjeto(tamano);
-        validarObligatorio(proveedor, "La contraseña no puede estar vacia");
+        validadorAtributos.validarObligatorio(marca, "La marca no puede ser vacia");
+        validadorAtributos.validarObligatorio(descripcion, "La descripcion no puede ser vacia");
+        validadorObjeto.validarObjeto(tamano, "El tamaño no puede ser vacio");
+        validadorAtributos.validarObligatorio(proveedor, "La contraseña no puede estar vacia");
 
         return new Caracteristica(marca, descripcion, tamano, proveedor);
     }
@@ -22,33 +27,5 @@ public class Caracteristica {
         this.descripcion = descripcion;
         this.tamano = tamano;
         this.proveedor = proveedor;
-    }
-
-    private static void validarObjeto(Object objeto){
-        if(objeto == null){
-            throw new IllegalArgumentException("El tamaño no puede ser vacio");
-        }
-    }
-
-    private static void validarObligatorio(String valor, String mensaje) {
-        if(valor == null || valor.isBlank()) {
-            throw new IllegalArgumentException(mensaje);
-        }
-    }
-
-    public String getMarca() {
-        return marca;
-    }
-
-    public String getDescripcion() {
-        return descripcion;
-    }
-
-    public Tamano getTamano() {
-        return tamano;
-    }
-
-    public String getProveedor() {
-        return proveedor;
     }
 }
