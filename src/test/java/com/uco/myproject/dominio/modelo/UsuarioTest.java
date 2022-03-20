@@ -12,8 +12,8 @@ class UsuarioTest {
         //arrange (prepara todos los datos para la prueba)
         String nombre = "Santiago";
         String apellido = "Cárdenas";
-        String correo = "jrsbjhfd";
-        String password = "jydfbdsjhb48A";
+        String correo = "santicarfranco8@gmmail.com";
+        String password = "Zqpfakoml1";
 
         //act (ejecuta el metodo a probar)
         Usuario usuario = Usuario.of(nombre, apellido, correo, password);
@@ -31,8 +31,8 @@ class UsuarioTest {
         //arrange (prepara todos los datos para la prueba)
         String nombre = null;
         String apellido = "Cárdenas";
-        String correo = "jrsbjhfd";
-        String password = "jydfbdsjhb48A";
+        String correo = "santicarfranco8@gmmail.com";
+        String password = "Zqpfakoml1";
 
         //act - assert (ejecuta el metodo a probar)
 
@@ -48,8 +48,8 @@ class UsuarioTest {
         //arrange (prepara todos los datos para la prueba)
         String nombre = "";
         String apellido = "Cárdenas";
-        String correo = "jrsbjhfd";
-        String password = "jydfbdsjhb48A";
+        String correo = "santicarfranco8@gmmail.com";
+        String password = "Zqpfakoml1";
 
         //act - assert (ejecuta el metodo a probar)
 

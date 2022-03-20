@@ -11,8 +11,8 @@ public class ProductoTest {
 
         //arrange (prepara todos los datos para la prueba)
         String nombre = "ProductoUno";
-        Usuario usuario = Usuario.of("Santiago", "Cárdenas", "hgdshdbjs",
-                "lsdncjskdn");
+        Usuario usuario = Usuario.of("Santiago", "Cárdenas",
+                "santicarfranco8@gmmail.com","Zqpfakoml1");
         Tamano tamano = Tamano.of("Grande", "Va desde 32cm a 52cm");
         Caracteristica caracteristica = Caracteristica.of("LG", "Fundada en algún año",
                 tamano, "Gerente de LG");
@@ -33,8 +33,8 @@ public class ProductoTest {
 
         //arrange (prepara todos los datos para la prueba)
         String nombre = null;
-        Usuario usuario = Usuario.of("Santiago", "Cárdenas", "hgdshdbjs",
-                "lsdncjskdn");
+        Usuario usuario = Usuario.of("Santiago", "Cárdenas",
+                "santicarfranco8@gmmail.com","Zqpfakoml1");
         Tamano tamano = Tamano.of("Grande", "Va desde 32cm a 52cm");
         Caracteristica caracteristica = Caracteristica.of("LG", "Fundada en algún año",
                 tamano, "Gerente de LG");
@@ -52,8 +52,8 @@ public class ProductoTest {
 
         //arrange (prepara todos los datos para la prueba)
         String nombre = "";
-        Usuario usuario = Usuario.of("Santiago", "Cárdenas", "hgdshdbjs",
-                "lsdncjskdn");
+        Usuario usuario = Usuario.of("Santiago", "Cárdenas",
+                "santicarfranco8@gmmail.com","Zqpfakoml1");
         Tamano tamano = Tamano.of("Grande", "Va desde 32cm a 52cm");
         Caracteristica caracteristica = Caracteristica.of("LG", "Fundada en algún año",
                 tamano, "Gerente de LG");
