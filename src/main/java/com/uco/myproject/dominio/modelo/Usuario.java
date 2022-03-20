@@ -16,7 +16,7 @@ public class Usuario {
         validadorAtributos.validarObligatorio(apellido, "El apellido no puede ser vacio");
         validadorAtributos.validarObligatorio(correo, "El correo no puede ser vacio");
         validadorAtributos.validarObligatorio(password, "La contraseña no puede estar vacia");
-        validadorAtributos.implemetacionCaracteresEspecialesCorreo(correo, "El correo tiene una reglas de escritura");
+        //validadorAtributos.implemetacionCaracteresEspecialesCorreo(correo, "El correo tiene una reglas de escritura");
         validadorAtributos.implemetacionCaracteresEspecialesPassword(password, "La contaseña tiene unas reglas de escritura");
 
         return new Usuario(nombre, apellido, correo, password);
