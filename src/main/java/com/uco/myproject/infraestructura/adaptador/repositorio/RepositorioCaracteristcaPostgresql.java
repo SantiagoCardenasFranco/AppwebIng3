@@ -11,6 +11,8 @@ import org.springframework.stereotype.Repository;
 
 import java.util.List;
 
+import static java.util.stream.Collectors.toList;
+
 @Repository
 public class RepositorioCaracteristcaPostgresql implements RepositorioCaracteristica {
 
@@ -33,7 +35,13 @@ public class RepositorioCaracteristcaPostgresql implements RepositorioCaracteris
 
     @Override
     public Caracteristica consultarPorId(Long id) {
-        return null;
+
+        return this.repositorioCaracteristicaJpa
+                .findById(id)
+                .map(entidad -> Caracteristica.of(entidad.getMarca(), entidad.getDescripcion(),
+                        Tamano.of(entidad.getEntidadTamano().getNombre(),
+                                entidad.getEntidadTamano().getEspecificacion()),
+                        entidad.getNombreProveedor())).orElse(null);
     }
 
     @Override

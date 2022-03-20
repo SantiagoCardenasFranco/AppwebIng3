@@ -1,6 +1,7 @@
 package com.uco.myproject.dominio.servicio.caracteristica;
 
 import com.uco.myproject.dominio.puerto.RepositorioCaracteristica;
+import com.uco.myproject.dominio.validador.ValidadorHora;
 import org.springframework.stereotype.Service;
 
 @Service
@@ -16,6 +17,7 @@ public class ServicioEliminarCaracteristica {
 
     public Boolean ejecutar(Long id) {
         if(repositorioCaracteristica.consultarPorId(id) != null){
+            ValidadorHora.validarHora();
             return this.repositorioCaracteristica.eliminar(id);
         }else{
             throw new IllegalStateException(MENSAJE_NO_EXISTE);

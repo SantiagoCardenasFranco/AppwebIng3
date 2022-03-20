@@ -1,6 +1,7 @@
 package com.uco.myproject.dominio.servicio.tamano;
 
 import com.uco.myproject.dominio.puerto.RepositorioTamano;
+import com.uco.myproject.dominio.validador.ValidadorHora;
 import org.springframework.stereotype.Service;
 
 @Service
@@ -15,9 +16,10 @@ public class ServicioEliminarTamano {
     }
 
     public Boolean ejecutar(Long id) {
-        if(repositorioTamano.consultarPorId(id) != null)
+        if(repositorioTamano.consultarPorId(id) != null) {
+            ValidadorHora.validarHora();
             return this.repositorioTamano.eliminar(id);
-        else{
+        }else{
             throw new IllegalStateException(MENSAJE_NO_EXISTE);
         }
     }

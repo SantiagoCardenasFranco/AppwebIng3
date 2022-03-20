@@ -2,6 +2,7 @@ package com.uco.myproject.dominio.servicio.usuario;
 
 import com.uco.myproject.dominio.modelo.Usuario;
 import com.uco.myproject.dominio.puerto.RepositorioUsuario;
+import com.uco.myproject.dominio.validador.ValidadorHora;
 import org.springframework.stereotype.Service;
 
 @Service
@@ -18,6 +19,7 @@ public class ServicioActualizarUsuario {
 
     public Boolean ejecutar(Long id, Usuario usuario){
         if(repositorioUsuario.consultarPorId(id) != null){
+            ValidadorHora.validarHora();
             return this.repositorioUsuario.actualizar(id, usuario);
         }else
         {

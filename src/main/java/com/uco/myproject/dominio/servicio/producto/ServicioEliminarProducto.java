@@ -1,6 +1,7 @@
 package com.uco.myproject.dominio.servicio.producto;
 
 import com.uco.myproject.dominio.puerto.RepositorioProducto;
+import com.uco.myproject.dominio.validador.ValidadorHora;
 import org.springframework.stereotype.Service;
 
 @Service
@@ -17,6 +18,7 @@ public class ServicioEliminarProducto {
     public Boolean ejecutar(Long id) {
         if (repositorioProducto.consultarPorId(id) != null)
         {
+            ValidadorHora.validarHora();
             return this.repositorioProducto.eliminar(id);
         }
         else {
