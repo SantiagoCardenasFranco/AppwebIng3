@@ -13,7 +13,7 @@ public class Producto {
 
     public static Producto of(String nombre, Usuario usuario, Caracteristica caracteristica) {
 
-        validadorAtributos.validarObligatorio(nombre, "Un producto debe ser registrado con un nombre");
+        validadorAtributos.validarObligatorio(nombre, "El nombre no puede ser vacio");
         validadorObjeto.validarObjeto(usuario, "Un producto debe ser registrado por un usuario");
         validadorObjeto.validarObjeto(caracteristica, "La caracteristca de un producto no debe estar vacio");
 

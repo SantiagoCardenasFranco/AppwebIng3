@@ -13,9 +13,9 @@ public class ProductoTest {
         String nombre = "ProductoUno";
         Usuario usuario = Usuario.of("Santiago", "Cárdenas",
                 "santicarfranco8@gmmail.com","w3Unpo<code>t0d0");
-        Tamano tamano = Tamano.of("Grande", "Va desde 32cm a 52cm");
+
         Caracteristica caracteristica = Caracteristica.of("LG", "Fundada en algún año",
-                tamano, "Gerente de LG");
+                Tamano.of("Grande", "Va desde 32cm a 52cm"), "Gerente de LG");
 
         //act (ejecuta el metodo a probar)
         Producto producto = Producto.of(nombre, usuario, caracteristica);
@@ -35,9 +35,8 @@ public class ProductoTest {
         String nombre = null;
         Usuario usuario = Usuario.of("Santiago", "Cárdenas",
                 "santicarfranco8@gmmail.com","w3Unpo<code>t0d0");
-        Tamano tamano = Tamano.of("Grande", "Va desde 32cm a 52cm");
         Caracteristica caracteristica = Caracteristica.of("LG", "Fundada en algún año",
-                tamano, "Gerente de LG");
+                Tamano.of("Grande", "Va desde 32cm a 52cm"), "Gerente de LG");
 
         //act - assert (ejecuta el metodo a probar)
 
@@ -54,9 +53,8 @@ public class ProductoTest {
         String nombre = "";
         Usuario usuario = Usuario.of("Santiago", "Cárdenas",
                 "santicarfranco8@gmmail.com","w3Unpo<code>t0d0");
-        Tamano tamano = Tamano.of("Grande", "Va desde 32cm a 52cm");
         Caracteristica caracteristica = Caracteristica.of("LG", "Fundada en algún año",
-                tamano, "Gerente de LG");
+                Tamano.of("Grande", "Va desde 32cm a 52cm"), "Gerente de LG");
 
         //act - assert (ejecuta el metodo a probar)
 
