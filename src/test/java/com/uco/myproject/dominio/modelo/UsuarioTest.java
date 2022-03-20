@@ -13,7 +13,7 @@ class UsuarioTest {
         String nombre = "Santiago";
         String apellido = "Cárdenas";
         String correo = "santicarfranco8@gmmail.com";
-        String password = "Zqpfakoml1";
+        String password = "w3Unpo<code>t0d0";
 
         //act (ejecuta el metodo a probar)
         Usuario usuario = Usuario.of(nombre, apellido, correo, password);
@@ -32,7 +32,7 @@ class UsuarioTest {
         String nombre = null;
         String apellido = "Cárdenas";
         String correo = "santicarfranco8@gmmail.com";
-        String password = "Zqpfakoml1";
+        String password = "w3Unpo<code>t0d0";
 
         //act - assert (ejecuta el metodo a probar)
 
@@ -49,7 +49,7 @@ class UsuarioTest {
         String nombre = "";
         String apellido = "Cárdenas";
         String correo = "santicarfranco8@gmmail.com";
-        String password = "Zqpfakoml1";
+        String password = "w3Unpo<code>t0d0";
 
         //act - assert (ejecuta el metodo a probar)
 

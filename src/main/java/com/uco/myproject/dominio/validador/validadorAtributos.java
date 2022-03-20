@@ -2,7 +2,7 @@ package com.uco.myproject.dominio.validador;
 
 public class validadorAtributos {
 
-    private static final String PATRON_CONTRASENA = "^(?=.*[a-z])(?=.*[A-Z])(?=.*?[0-9]).{8,}$";
+    private static final String PATRON_CONTRASENA = "^(?=.*\\d)(?=.*[\\u0021-\\u002b\\u003c-\\u0040])(?=.*[A-Z])(?=.*[a-z])\\S{8,16}$";
     private static final String PATRON_CORREO = "^[\\w-]+(\\.[\\w-]+)*@[A-Za-z0-9]+(\\.[A-Za-z0-9]+)*(\\.[A-Za-z]{2,})$";
 
     public static void validarObligatorio(String valor, String mensaje) {
