@@ -17,6 +17,7 @@ public class ValidadorHora {
         LocalTime horaApertura = LocalTime.parse(HORA_APERTURA_SISTEMA);
         if (horaCierre.isBefore(hora) || horaApertura.isAfter(hora)) {
             throw new IllegalStateException(DESPUES_DE_HORA);
+
         }
     }
 }

@@ -2,7 +2,6 @@ package com.uco.myproject.dominio.servicio.usuario;
 
 import com.uco.myproject.dominio.modelo.Usuario;
 import com.uco.myproject.dominio.puerto.RepositorioUsuario;
-import com.uco.myproject.dominio.validador.ValidadorHora;
 import org.springframework.stereotype.Service;
 
 @Service
@@ -21,7 +20,6 @@ public class ServicioGuardarUsuario {
         if(this.repositorioUsuario.existe(usuario)) {
             throw new IllegalStateException(MENSAJE_YA_EXISTE);
         }
-        ValidadorHora.validarHora();
         return this.repositorioUsuario.guardar(usuario);
     }
 }

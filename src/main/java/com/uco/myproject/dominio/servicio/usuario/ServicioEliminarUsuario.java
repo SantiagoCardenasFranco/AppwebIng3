@@ -1,7 +1,6 @@
 package com.uco.myproject.dominio.servicio.usuario;
 
 import com.uco.myproject.dominio.puerto.RepositorioUsuario;
-import com.uco.myproject.dominio.validador.ValidadorHora;
 import org.springframework.stereotype.Service;
 
 @Service
@@ -17,7 +16,6 @@ public class ServicioEliminarUsuario {
 
     public Boolean ejecutar(Long id) {
         if(repositorioUsuario.consultarPorId(id) != null){
-            ValidadorHora.validarHora();
             return this.repositorioUsuario.eliminar(id);
         }else
         {

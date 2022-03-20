@@ -2,7 +2,6 @@ package com.uco.myproject.dominio.servicio.tamano;
 
 import com.uco.myproject.dominio.modelo.Tamano;
 import com.uco.myproject.dominio.puerto.RepositorioTamano;
-import com.uco.myproject.dominio.validador.ValidadorHora;
 import org.springframework.stereotype.Service;
 
 @Service
@@ -21,7 +20,6 @@ public class ServicioGuardarTamano {
         if(this.repositorioTamano.existe(tamano)) {
             throw new IllegalStateException(MENSAJE_YA_EXISTE);
         }
-        ValidadorHora.validarHora();
         return this.repositorioTamano.guardar(tamano);
     }
 }
