@@ -88,4 +88,9 @@ public class RepositorioProductoPostgresql implements RepositorioProducto {
         repositorioProductoJpa.save(entidadProducto);
         return true;
     }
+
+    @Override
+    public boolean existe(Producto producto) {
+        return this.repositorioProductoJpa.findByNombre(producto.getNombre()) != null;
+    }
 }

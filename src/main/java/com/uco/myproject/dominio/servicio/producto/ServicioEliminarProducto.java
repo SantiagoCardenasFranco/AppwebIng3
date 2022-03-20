@@ -6,7 +6,7 @@ import org.springframework.stereotype.Service;
 @Service
 public class ServicioEliminarProducto {
 
-    //private static final String MENSAJE_NO_EXISTE = "El producto que intenta elminar no está en el repositorio";
+    private static final String MENSAJE_NO_EXISTE = "El producto que intenta eliminar no está en el repositorio";
 
     private final RepositorioProducto repositorioProducto;
 
@@ -15,6 +15,12 @@ public class ServicioEliminarProducto {
     }
 
     public Boolean ejecutar(Long id) {
-        return this.repositorioProducto.eliminar(id);
+        if (repositorioProducto.consultarPorId(id) != null)
+        {
+            return this.repositorioProducto.eliminar(id);
+        }
+        else {
+            throw new IllegalStateException(MENSAJE_NO_EXISTE);
+        }
     }
 }

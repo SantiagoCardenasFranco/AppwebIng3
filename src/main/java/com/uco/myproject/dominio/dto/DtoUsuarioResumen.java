@@ -1,5 +1,8 @@
 package com.uco.myproject.dominio.dto;
 
+import lombok.Getter;
+
+@Getter
 public class DtoUsuarioResumen {
 
     private String nombre;
@@ -14,17 +17,5 @@ public class DtoUsuarioResumen {
         this.nombre = nombre;
         this.apellido = apellido;
         this.correo = correo;
-    }
-
-    public String getNombre() {
-        return nombre;
-    }
-
-    public String getApellido() {
-        return apellido;
-    }
-
-    public String getCorreo() {
-        return correo;
     }
 }

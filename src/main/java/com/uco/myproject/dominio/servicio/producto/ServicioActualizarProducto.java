@@ -17,6 +17,10 @@ public class ServicioActualizarProducto {
     }
 
     public Boolean ejecutar(Long id, Producto producto){
-        return this.repositorioProducto.actualizar(id, producto);
+        if(repositorioProducto.consultarPorId(id) != null){
+            return this.repositorioProducto.actualizar(id, producto);
+        }else {
+            throw new IllegalStateException(PERSONA_ACTUALIZADA);
+        }
     }
 }

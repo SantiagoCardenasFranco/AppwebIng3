@@ -7,7 +7,7 @@ import org.springframework.stereotype.Service;
 @Service
 public class ServicioActualizarCaracteristica {
 
-    private static final String PERSONA_ACTUALIZADA = "NO SE ENCONTRÓ LA CARACTERISTICA O NO EXISTE";
+    private static final String CARACTERISTICA_ACTUALIZADA = "NO SE ENCONTRÓ LA CARACTERISTICA O NO EXISTE";
 
     private final RepositorioCaracteristica repositorioCaracteristica;
 
@@ -17,6 +17,10 @@ public class ServicioActualizarCaracteristica {
     }
 
     public Boolean ejecutar(Long id, Caracteristica caracteristica){
-        return this.repositorioCaracteristica.actualizar(id, caracteristica);
+        if(repositorioCaracteristica.consultarPorId(id) != null){
+            return this.repositorioCaracteristica.actualizar(id, caracteristica);
+        }else {
+            throw new IllegalStateException(CARACTERISTICA_ACTUALIZADA);
+        }
     }
 }

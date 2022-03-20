@@ -11,4 +11,5 @@ public interface RepositorioProducto {
     Long guardar(Producto producto);
     Boolean eliminar(Long id);
     Boolean actualizar(Long id, Producto producto);
+    boolean existe(Producto producto);
 }

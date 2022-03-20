@@ -13,8 +13,8 @@ public class ProductoTestDataBuilder {
 
     public ProductoTestDataBuilder() {
         this.nombre = "ProductoUno";
-        this.usuario = Usuario.of("Santiago", "Cárdenas", "sjhbcjsnd",
-                "avsyxgbaj");
+        this.usuario = Usuario.of("Santiago", "Cárdenas", "santicarfranco8@gmmail.com",
+                "w3Unpo<code>t0d0");
         this.caracteristica = Caracteristica.of("LG", "Fundación",
                 Tamano.of("Grande", "Va desde 32 a 50 cm") , "Gerente de LG");
     }

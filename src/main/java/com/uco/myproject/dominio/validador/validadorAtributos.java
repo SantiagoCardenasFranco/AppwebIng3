@@ -5,6 +5,9 @@ public class validadorAtributos {
     private static final String PATRON_CONTRASENA = "^(?=.*\\d)(?=.*[\\u0021-\\u002b\\u003c-\\u0040])(?=.*[A-Z])(?=.*[a-z])\\S{8,16}$";
     private static final String PATRON_CORREO = "^[\\w-]+(\\.[\\w-]+)*@[A-Za-z0-9]+(\\.[A-Za-z0-9]+)*(\\.[A-Za-z]{2,})$";
 
+    private validadorAtributos() {
+    }
+
     public static void validarObligatorio(String valor, String mensaje) {
         if(valor == null || valor.isBlank()) {
             throw new IllegalArgumentException(mensaje);
