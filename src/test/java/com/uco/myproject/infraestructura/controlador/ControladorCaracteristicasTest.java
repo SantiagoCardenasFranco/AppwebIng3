@@ -93,18 +93,4 @@ class ControladorCaracteristicasTest {
         Assertions.assertEquals(dto.getProveedor(), caracteristica.getProveedor());
     }
 
-    /*@Test
-    @DisplayName("Debe listar los tamaños luego de crearlos")
-    void listarTest() throws Exception {
-
-        var dto = new DtoTamanoTestDataBuilder().build();
-
-        crear(dto);
-
-        mocMvc.perform(get("/api/tamanos")
-                        .contentType(MediaType.APPLICATION_JSON))
-                .andExpect(status().isOk())
-                .andExpect(jsonPath("$[0].nombre", is(dto.getNombre())))
-                .andExpect(jsonPath("$[0].especificacion", is(dto.getEspecificacion())));
-    }*/
 }
