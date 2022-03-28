@@ -105,7 +105,7 @@ class ControladorTamanoTest {
         mocMvc.perform(get("/api/tamanos")
                         .contentType(MediaType.APPLICATION_JSON))
                 .andExpect(status().isOk())
-                .andExpect(jsonPath("$[0].nombre", is(dto.getNombre())))
-                .andExpect(jsonPath("$[0].especificacion", is(dto.getEspecificacion())));
+                .andExpect(jsonPath("$[1].nombre", is(dto.getNombre())))
+                .andExpect(jsonPath("$[1].especificacion", is(dto.getEspecificacion())));
     }
 }

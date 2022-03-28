@@ -10,6 +10,7 @@ import com.uco.myproject.infraestructura.adaptador.repositorio.jpa.RepositorioTa
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
+import java.util.Optional;
 
 import static java.util.stream.Collectors.toList;
 
@@ -36,8 +37,9 @@ public class RepositorioCaracteristcaPostgresql implements RepositorioCaracteris
     @Override
     public Caracteristica consultarPorId(Long id) {
 
-        return this.repositorioCaracteristicaJpa
-                .findById(id)
+        Optional<EntidadCaracteristica> entidadEncontrada = this.repositorioCaracteristicaJpa.findById(id);
+
+        return entidadEncontrada
                 .map(entidad -> Caracteristica.of(entidad.getMarca(), entidad.getDescripcion(),
                         Tamano.of(entidad.getEntidadTamano().getNombre(),
                                 entidad.getEntidadTamano().getEspecificacion()),
@@ -46,8 +48,12 @@ public class RepositorioCaracteristcaPostgresql implements RepositorioCaracteris
 
     @Override
     public Long guardar(Caracteristica caracteristica) {
+
+
+
         EntidadTamano entidadTamano = this.repositorioTamanoJpa.findByNombreAndEspecificacion(caracteristica.getTamano().getNombre(),
                 caracteristica.getTamano().getEspecificacion());
+
         EntidadCaracteristica entidadCaracteristica = new EntidadCaracteristica(caracteristica.getMarca(),
                 caracteristica.getDescripcion(),
                 entidadTamano,
