@@ -12,7 +12,7 @@ import com.uco.myproject.infraestructura.adaptador.repositorio.jpa.RepositorioCa
 import com.uco.myproject.infraestructura.adaptador.repositorio.jpa.RepositorioProductoJpa;
 import com.uco.myproject.infraestructura.adaptador.repositorio.jpa.RepositorioUsuarioJpa;
 import org.springframework.stereotype.Repository;
-
+import static java.util.stream.Collectors.toList;
 import java.util.List;
 
 @Repository

@@ -6,6 +6,7 @@ import com.uco.myproject.infraestructura.adaptador.entidad.EntidadTamano;
 import com.uco.myproject.infraestructura.adaptador.repositorio.jpa.RepositorioTamanoJpa;
 import org.springframework.stereotype.Repository;
 import java.util.List;
+import java.util.stream.Collectors;
 
 @Repository
 public class RepositorioTamanoPostgresql implements RepositorioTamano {

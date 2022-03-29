@@ -12,7 +12,6 @@ import org.springframework.stereotype.Repository;
 import java.util.List;
 import java.util.Optional;
 
-import static java.util.stream.Collectors.toList;
 
 @Repository
 public class RepositorioCaracteristcaPostgresql implements RepositorioCaracteristica {
@@ -31,7 +30,8 @@ public class RepositorioCaracteristcaPostgresql implements RepositorioCaracteris
 
         List<EntidadCaracteristica> entidades = this.repositorioCaracteristicaJpa.findAll();
         return entidades.stream().map(entidad -> Caracteristica.of(entidad.getMarca(), entidad.getDescripcion(),
-                Tamano.of(entidad.getEntidadTamano().getNombre(), entidad.getEntidadTamano().getEspecificacion()), entidad.getNombreProveedor())).toList();
+                Tamano.of(entidad.getEntidadTamano().getNombre(), entidad.getEntidadTamano().getEspecificacion()),
+                entidad.getNombreProveedor())).toList();
     }
 
     @Override

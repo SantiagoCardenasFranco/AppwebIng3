@@ -7,6 +7,7 @@ import com.uco.myproject.infraestructura.adaptador.entidad.EntidadUsuario;
 import com.uco.myproject.infraestructura.adaptador.repositorio.jpa.RepositorioUsuarioJpa;
 import org.springframework.stereotype.Repository;
 import java.util.List;
+import java.util.stream.Collectors;
 
 @Repository
 public class RepositorioUsuarioPostgresql implements RepositorioUsuario {
